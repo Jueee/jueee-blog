@@ -1,48 +1,40 @@
-<a title="NexT website" href="https://theme-next.js.org"><img align="right" alt="NexT logo" width="100" height="100" src="https://raw.githubusercontent.com/next-theme/hexo-theme-next/master/source/images/logo.svg"></a>
+## 个人博客
 
-# [NexT](https://github.com/next-theme/hexo-theme-next) [Documentation](https://theme-next.js.org)
+![](https://img.shields.io/badge/build-success-green) ![](https://img.shields.io/badge/version-1.0-orange) ![](https://img.shields.io/badge/author-Jueee-blue)
 
-> «NexT» is a high quality elegant [Hexo](https://hexo.io) theme. It is crafted from scratch with love.
+### 发布地址
 
-[![Build Status](https://img.shields.io/netlify/bc28ebb2-8371-4a33-a1eb-e0a15e909168?logo=netlify&style=flat-square)](https://app.netlify.com/sites/hexo-theme-next/deploys)
+本博客发布于：[https://jueee.github.io/](https://jueee.github.io/)
 
-## Schemes
+### 依赖说明
 
-* :heart_decoration: [Muse](https://theme-next.js.org/muse/)
-* :six_pointed_star: [Mist](https://theme-next.js.org/mist/)
-* :pisces: [Pisces](https://theme-next.js.org/pisces/)
-* :gemini: [Gemini](https://theme-next.js.org) (**Default**)
+本项目由 next 搭建：
 
-## Getting started
+> [https://github.com/next-theme/theme-next-docs](https://github.com/next-theme/theme-next-docs)
 
-Autoinstall Hexo & NexT & NexT Website Source on Localhost:
+博客主题：
 
-```bash
-git clone https://github.com/next-theme/theme-next-docs
-cd theme-next-docs
+> [https://github.com/next-theme/hexo-theme-next](https://github.com/next-theme/hexo-theme-next)
+
+### 项目构建
+
+在本地安装：
+
+```shell
+git clone https://github.com/Jueee/jueee-blog.git
+cd jueee-blog
 npm install
 ```
 
-Generate:
+生成：
 
-```bash
+```shell
 npx hexo generate
 ```
 
-Run server:
+运行：
 
-```bash
+```shell
 npx hexo server
 ```
 
-### Checkout docs for older versions
-
-```bash
-git checkout v8.0.0-rc.4
-npm install
-npx hexo clean
-```
-
-## License
-
-[![CC BY-NC-SA 4.0](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
