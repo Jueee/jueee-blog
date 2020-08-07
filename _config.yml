@@ -4,6 +4,7 @@
 
 # Site
 title: Jueee的专栏
+author: Jueee
 keywords: "Hexo, NexT"
 language: zh-CN
 timezone: UTC
@@ -23,6 +24,7 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - README.md
   - 'robots.txt'
   - animate/*
   - highlight/*
@@ -41,10 +43,16 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
-  line_number: false
-  auto_detect: false
+  enable: false
+  line_number: true
+  auto_detect: true
   tab_replace: ''
+prism_plugin:
+  mode: 'preprocess'    # realtime/preprocess
+  theme: 'tomorrow'
+  line_number: false    # default false
+  custom_css:
+
 
 # Home page setting
 index_generator:
