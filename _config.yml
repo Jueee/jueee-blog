@@ -1,0 +1,96 @@
+#################################################################
+###################### Hexo Configuration #######################
+#################################################################
+
+# Site
+title: Jueee的专栏
+keywords: "Hexo, NexT"
+language: zh-CN
+timezone: UTC
+
+# URL
+url: https://jueee.github.io/
+root: /
+permalink: :title/
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives/
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+  - 'robots.txt'
+  - animate/*
+  - highlight/*
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: false
+  auto_detect: false
+  tab_replace: ''
+
+# Home page setting
+index_generator:
+  per_page: 4
+  order_by: -date
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+per_page: 5
+pagination_dir: page
+
+# Extensions
+theme: next
+
+archive_generator:
+  per_page: 12
+  yearly: true
+  monthly: true
+  daily: false
+
+server:
+  port: 4000
+
+marked:
+  # For preserve original quotes in code blocks.
+  smartypants: false
+  lazyload: true
+
+search:
+  path: search.json
+  field: all
+# 自动生成sitemap
+sitemap:
+    path: sitemap.xml
+baidusitemap:
+    path: baidusitemap.xml
+    
+deploy:
+  type: git
+  repository: git@github.com:Jueee/jueee.github.io.git
+  branch: master
