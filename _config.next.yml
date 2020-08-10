@@ -26,11 +26,6 @@ footer:
   copyright: Jueee/Yongqiang Wei
   powered: false
 
-creative_commons:
-  license: by-nc-sa
-  sidebar: true
-
-
 # ============================================================= #
 # ====================== Scheme Settings ====================== #
 # ============================================================= #
@@ -109,7 +104,7 @@ menu_settings:
 
 
 # ============================================================= #
-# ===================== Sidebar Settings ====================== #
+# ===================== Sidebar Settings（侧边栏设置） ====================== #
 # ============================================================= #
 
 sidebar:
@@ -139,6 +134,9 @@ toc:
   wrap: true
   expand_all: true
   max_depth: 9
+
+links_settings:
+  title: 笔记总结
 
 links:
   docker 相关学习笔记: https://jueee.github.io/docker-doc/
@@ -174,12 +172,12 @@ post_edit:
 mobile_layout_economy: true
 
 codeblock:
-  theme:
-    light: default
-    dark: tomorrow-night
+  prism:
+    light: prism-tomorrow
+    dark: prism-tomorrow
   copy_button:
     enable: true
-    style: default
+    style: flat
 
 back2top:
   enable: true

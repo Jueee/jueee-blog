@@ -4,6 +4,7 @@
 
 # Site
 title: Jueee的专栏
+subtitle: 进一寸有一寸的欢喜
 author: Jueee
 keywords: "Hexo, NexT"
 language: zh-CN
@@ -44,14 +45,12 @@ relative_link: false
 future: true
 highlight:
   enable: false
-  line_number: true
+  line_number: false
   auto_detect: true
   tab_replace: ''
-prism_plugin:
-  mode: 'preprocess'    # realtime/preprocess
-  theme: 'tomorrow'
-  line_number: false    # default false
-  custom_css:
+prismjs:
+  enable: true
+  line_number: false
 
 # Home page setting
 index_generator:
