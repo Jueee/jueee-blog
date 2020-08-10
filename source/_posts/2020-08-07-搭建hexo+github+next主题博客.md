@@ -119,3 +119,26 @@ hexo d == hexo deploy
 hexo s -g #生成并本地预览
 hexo d -g #生成并上传
 ```
+
+### 问题处理
+
+```
+PS E:\code\GitHub\Jueee\jueee-blog> npx hexo clean
+(node:44956) ExperimentalWarning: The fs.promises API is experimental
+ERROR { err:
+   E:\code\GitHub\Jueee\jueee-blog\node_modules\hexo-theme-next\package.json:2
+     "_from": "hexo-theme-next@8.0.0-rc.5",
+```
+
+查看 node 版本
+
+```
+node -v
+v10.16.0
+npm -v
+6.9.0
+```
+
+需要升级 node 到最新版。
+
+下载地址：[https://nodejs.org/zh-cn/download/](https://nodejs.org/zh-cn/download/)

@@ -40,9 +40,9 @@ def replaceFile(file,old_str,new_str):
 
 def replaceBolgs(blogs):
     for blog in blogs:
-        replaceFile(blog,"/assets/images/","/images/")
+        #replaceFile(blog,"/assets/images/","/images/")
         #replaceFile(blog,"Edit: 2020","date: 2020")
-        #replaceFile(blog,"assets/1","/assets/images/"+YEAR_NUM+"/"+MONTH_NUM+"/1")
+        replaceFile(blog,"assets/1","/images/"+YEAR_NUM+"/"+MONTH_NUM+"/1")
 
 def moveImages():
     if not os.path.exists(NEW_IMAGES_PATH):
@@ -60,4 +60,4 @@ def moveImages():
 if __name__ == '__main__':
     blogs = getBlogAddress()   
     replaceBolgs(blogs)
-    #moveImages()
+    moveImages()

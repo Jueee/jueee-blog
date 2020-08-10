@@ -116,7 +116,7 @@ redefine success, size: 1
 
 ### 结合 jad/mc 命令使用
 
-```
+```shell
 jad --source-only com.example.demo.arthas.user.UserController > /tmp/UserController.java
 mc /tmp/UserController.java -d /tmp
 redefine /tmp/com/example/demo/arthas/user/UserController.class

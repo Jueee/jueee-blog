@@ -18,11 +18,11 @@ custom_file_path:
 # ============================================================= #
 
 footer:
-  since: 2014
+  since: 2020
   icon:
-    name: fa fa-user
+    name: fa fa-heart
     animated: true
-    color: "#808080"
+    color: "#f00"
   copyright: Jueee/Yongqiang Wei
   powered: false
 
@@ -52,6 +52,7 @@ menu:
   archives: /archives/ || fa fa-archive
   categories: /categories || fa fa-fw fa-th
   tags: /tags || fa fa-fw fa-tags
+  nodes: /nodes || fa fa-object-group
   Docs:
     default: /docs/ || fa fa-book
 
@@ -120,6 +121,7 @@ sidebar:
 avatar:
   url: /images/basic/logo.jpg
   rounded: true
+  rotated: true
 
 social:
   GitHub: https://github.com/Jueee || fab fa-github
@@ -135,7 +137,17 @@ toc:
   enable: true
   number: true
   wrap: true
+  expand_all: true
+  max_depth: 9
 
+links:
+  docker 相关学习笔记: https://jueee.github.io/docker-doc/
+  kubernetes 相关学习笔记: https://jueee.github.io/kubernetes-doc/
+  设计模式相关学习笔记: https://jueee.github.io/design-patterns/
+  Effective Java 学习笔记: https://jueee.github.io/effective-Java/
+  Java 并发编程学习笔记: https://jueee.github.io/ConcurrencyWithJava/
+  Java 测试驱动开发学习笔记: https://jueee.github.io/JavaTestDrivenDev/
+  Java 8 函数式编程学习笔记: https://jueee.github.io/Java8Lambdas/
 
 # ============================================================= #
 # ======================= Post Settings ======================= #
@@ -151,8 +163,8 @@ symbols_count_time:
   item_text_total: true
 
 post_edit:
-  enable: true
-  url: https://github.com/Jueee/jueee.github.io/edit/master/source/
+  enable: false
+  url: https://github.com/Jueee/jueee-blog/edit/master/source/
 
 
 # ============================================================= #
@@ -188,9 +200,10 @@ index_with_subtitle: true
 
 exturl: true
 
-google_site_verification: 5AUIVYTbHIAuz-eQtxSfZbWW5eg9_EVZMSQycIuXrG0
+google-site-verification: EOcKnfaSWdV1p3pQylUZvIx2N977P3HKwO8tQCXWxUQ
 
-
+related_posts:
+  enable: true
 # ============================================================= #
 # =============== Third Party Services Settings =============== #
 # ============================================================= #
@@ -213,18 +226,44 @@ comments:
   lazyload: true
 
 disqus:
-  enable: true
+  enable: false
   shortname: theme-next
   count: true
 
+valine:
+  enable: true
+  appId:  p5BeaWTTwjpAjNFu85LdGhaE-gzGzoHsz
+  appKey:  UjjFeqPU2GMhIUJUYBh16SE0
+  placeholder: Just go go # comment box placeholder
+  avatar: mm # gravatar style
+  meta: [nick, mail, link] # Custom comment header
+  pageSize: 10 # pagination size
+  visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
+  comment_count: true # If false, comment count will only be displayed in post page, not in home page
+  recordIP: false # Whether to record the commenter IP
+  serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)
 
 # ============================================================= #
-# ================= Statistics and Analytics ================== #
+# ================= Statistics and Analytics （统计和分析）================== #
 # ============================================================= #
+# Google Analytics
+google_analytics:
+  tracking_id: UA-175024528-1
+  only_pageview: false
+# Baidu Analytics ID
+baidu_analytics: d11c8b9bc802239c2cc46ff39d3faf79
 
-
+# 不蒜子计数
+busuanzi_count:
+  enable: true
+  total_visitors: true
+  total_visitors_icon: fa fa-user
+  total_views: true
+  total_views_icon: fa fa-eye
+  post_views: true
+  post_views_icon: fa fa-eye
 # ============================================================= #
-# ====================== Search Services ====================== #
+# ====================== Search Services （搜索服务）====================== #
 # ============================================================= #
 
 local_search:

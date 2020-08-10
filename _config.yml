@@ -12,7 +12,7 @@ timezone: UTC
 # URL
 url: https://jueee.github.io/
 root: /
-permalink: :title/
+permalink: :year/:month/:title/
 permalink_defaults:
 
 # Directory
@@ -52,7 +52,6 @@ prism_plugin:
   theme: 'tomorrow'
   line_number: false    # default false
   custom_css:
-
 
 # Home page setting
 index_generator:
