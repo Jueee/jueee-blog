@@ -1,7 +1,9 @@
 #################################################################
 ###################### NexT Configuration #######################
 #################################################################
-
+favicon:
+  small: /images/basic/jue.ico
+  medium: /images/basic/jue.ico
 # ============================================================= #
 # ============= Theme Core Configuration Settings ============= #
 # ============================================================= #
@@ -48,52 +50,6 @@ menu:
   categories: /categories || fa fa-fw fa-th
   tags: /tags || fa fa-fw fa-tags
   nodes: /nodes || fa fa-object-group
-  Docs:
-    default: /docs/ || fa fa-book
-
-    Getting Started:
-      default: /getting-started/ || fa fa-flag
-      Installation: /installation.html || fa fa-download
-      Deployment: /deployment.html || fa fa-upload
-      Configuration: /configuration.html || fa fa-wrench
-      Internationalization: /internationalization.html || fa fa-globe
-      Update from 5.x: /update-from-v5.html || fa fa-retweet
-
-    Theme Settings:
-      default: /theme-settings/ || fa fa-star
-      Footer: /footer.html || far fa-swatchbook
-      Sidebar: /sidebar.html || fa fa-bars
-      Posts: /posts.html || fa fa-paragraph
-      Custom Pages: /custom-pages.html || far fa-edit
-      Custom Files: /custom-files.html || fa fa-palette
-      SEO: /seo.html || fa fa-external-link-square-alt
-      Front Matter: /front-matter.html || fa fa-heading
-
-    Third Party Services:
-      default: /third-party-services/ || fa fa-puzzle-piece
-      Math Equations: /math-equations.html || fa fa-square-root-alt
-      Comment Systems: /comments.html || far fa-comment
-      Statistics and Analytics: /statistics-and-analytics.html || fa fa-chart-pie
-      Post Widgets: /post-widgets.html || fa fa-gift
-      Search Services: /search-services.html || fa fa-search-plus
-      Chat Services: /chat-services.html || fa fa-comments
-      External Libraries: /external-libraries.html || fa fa-plug
-
-    Tag Plugins:
-      default: /tag-plugins/ || fa fa-rocket
-      Button: /button.html || fa fa-cube
-      Caniuse: /caniuse.html || fa fa-signal
-      Group Pictures: /group-pictures.html || far fa-images
-      Label: /label.html || fa fa-hat-wizard
-      Link Grid: /link-grid.html || fa fa-grip-vertical
-      Mermaid: /mermaid.html || fa fa-project-diagram
-      Note: /note.html || fa fa-adjust
-      PDF: /pdf.html || far fa-file-pdf
-      Tabs: /tabs.html || fa fa-columns
-
-    Advanced Settings: /advanced-settings.html || fa fa-cog
-    Troubleshooting: /troubleshooting.html || fa fa-life-ring
-
   #sitemap: /sitemap.xml || fa fa-sitemap
   #commonweal: /404/ || fa fa-heartbeat
 
@@ -139,13 +95,13 @@ links_settings:
   title: 笔记总结
 
 links:
-  docker 相关学习笔记: https://jueee.github.io/docker-doc/
-  kubernetes 相关学习笔记: https://jueee.github.io/kubernetes-doc/
-  设计模式相关学习笔记: https://jueee.github.io/design-patterns/
-  Effective Java 学习笔记: https://jueee.github.io/effective-Java/
-  Java 并发编程学习笔记: https://jueee.github.io/ConcurrencyWithJava/
-  Java 测试驱动开发学习笔记: https://jueee.github.io/JavaTestDrivenDev/
-  Java 8 函数式编程学习笔记: https://jueee.github.io/Java8Lambdas/
+  docker 相关: https://jueee.github.io/docker-doc/
+  kubernetes 相关: https://jueee.github.io/kubernetes-doc/
+  设计模式相关: https://jueee.github.io/design-patterns/
+  Effective Java : https://jueee.github.io/effective-Java/
+  Java 并发编程: https://jueee.github.io/ConcurrencyWithJava/
+  Java 测试驱动开发: https://jueee.github.io/JavaTestDrivenDev/
+  Java 8 函数式编程: https://jueee.github.io/Java8Lambdas/
 
 # ============================================================= #
 # ======================= Post Settings ======================= #
@@ -198,7 +154,9 @@ index_with_subtitle: true
 
 exturl: true
 
-google-site-verification: EOcKnfaSWdV1p3pQylUZvIx2N977P3HKwO8tQCXWxUQ
+google_site_verification: EOcKnfaSWdV1p3pQylUZvIx2N977P3HKwO8tQCXWxUQ
+bing_site_verification: 8093694B5A8E701B8D5816675F84CFFB
+baidu_push: true
 
 related_posts:
   enable: true
@@ -287,6 +245,13 @@ tabs:
 mermaid:
   enable: true
 
+# ============================================================= #
+# ==================== Chat Services （聊天服务）===================== #
+# ============================================================= #
+chatra:
+  enable: false
+  async: true
+  id: 8nRWk5a2woHQ9j4g2
 # ============================================================= #
 # ==================== External Libraries ===================== #
 # ============================================================= #

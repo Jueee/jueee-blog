@@ -5,8 +5,8 @@ commentable: true
 date: 2020-07-25
 mathjax: true
 mermaid: true
-tags: GitLab
-categories: GitLab
+tags: Git
+categories: Git
 description: 在 GitLab 的 CI/CD 流程。
 ---
 

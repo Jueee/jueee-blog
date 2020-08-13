@@ -1,13 +1,13 @@
 ---
 layout: page
-title: 笔记合集
+title: 阅读笔记合集
 date: 2020-08-10 11:07:48
 edit: false
 comments: false
 tags:
 ---
 
-### 容器化相关笔记
+#### 容器化相关笔记
 
 {% linkgrid %}
 
@@ -17,7 +17,7 @@ kubernetes 相关 | https://jueee.github.io/kubernetes-doc/ | kubernetes 相关�
 
 {% endlinkgrid %}
 
-### Java 相关笔记
+#### Java 相关笔记
 
 {% linkgrid %}
 
@@ -31,5 +31,25 @@ Java 测试驱动开发 | https://jueee.github.io/JavaTestDrivenDev/ | 《Java �
 
 
 Java 8 函数式编程 | https://jueee.github.io/Java8Lambdas/ | 《Java 8 函数式编程》学习笔记 | /images/nodes/lambda.png
+
+Spring Boot实战 | https://jueee.github.io/spring-boot-in-action/ | 《 Spring Boot实战（第4版）》 学习笔记 | /images/nodes/spring-boot.png
+
+{% endlinkgrid %}
+
+#### Spark 相关笔记
+
+{% linkgrid %}
+
+Spark 大数据分析 | https://jueee.github.io/SparkFastDataAnalysis/ | 《Spark 快速大数据分析》学习笔记 | /images/nodes/spark.png
+
+Scala 程序设计 | https://jueee.github.io/ScalaProgramming/ | 《 Scala 程序设计（第 2 版）》学习笔记| /images/nodes/scala.png
+
+{% endlinkgrid %}
+
+#### Python 相关笔记
+
+{% linkgrid %}
+
+Python 标准库 | http://jueee.github.io/PythonStandardLibrary/ | 《Python Standard Library》学习笔记 | /images/nodes/python.jpg
 
 {% endlinkgrid %}
