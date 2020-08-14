@@ -5,8 +5,8 @@ commentable: true
 date: 2020-07-16
 mathjax: true
 mermaid: true
-tags: [Java诊断,Arthas]
-categories: [Java,Java诊断]
+tags: [Java,Java诊断,Arthas]
+categories: [Java,Java诊断,Arthas]
 description: 所谓的 Java 热更新是指在不重启项目的情况下实现代码的更新与替换。使用它可以实现不停机更新 Java 程序，尤其是对那些启动非常耗时的 Java 项目来说，更是效果显著。
 
 ---
