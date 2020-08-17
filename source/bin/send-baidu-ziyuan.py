@@ -3,7 +3,7 @@ import requests
 from urllib.request import quote
 
 
-CONVERTDIR = "../../_site/"
+CONVERTDIR = "../../public/"
 YEAR="2020"
 
 BLOG_URL="https://jueee.github.io/"
