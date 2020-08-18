@@ -1,2 +1,2 @@
-User-agent: *
-Disallow: /
+Disallow: /bin/
+Sitemap: https://jueee.github.io/sitemap.xml

@@ -35,6 +35,7 @@
 
 - [Google 网站管理员工具](https://www.google.com/webmasters/tools)
 - [Bing 网站管理员工具](https://www.bing.com/webmaster/)
+- [Yandex网站管理员工具](https://webmaster.yandex.ru/site/dashboard/)
 - [Baidu 网站管理员工具](https://ziyuan.baidu.com/site/)
 
 ### 依赖说明

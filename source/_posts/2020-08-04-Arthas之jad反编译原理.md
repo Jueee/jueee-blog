@@ -87,6 +87,12 @@ public interface ClassFileTransformer {
 
 > [https://github.com/hengyunabc/dumpclass](https://github.com/hengyunabc/dumpclass)
 
+### jad 命令实现过程
+
+[JadCommand.java](https://github.com/alibaba/arthas/blob/master/core/src/main/java/com/taobao/arthas/core/command/klass100/JadCommand.java)：
+
+`process()` -> `processExactMatch()` -> `Decompiler.decompile()`
+
 ### cfr反编译示例
 
 参考Arthas代码：[com.taobao.arthas.core.util.Decompiler.java](https://github.com/alibaba/arthas/blob/master/core/src/main/java/com/taobao/arthas/core/util/Decompiler.java)
