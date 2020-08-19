@@ -6,7 +6,7 @@ date: 2020-08-14
 mathjax: true
 mermaid: true
 tags: [Java,Java诊断,Arthas]
-categories: [Java,Java诊断,Arthas]
+categories: [Java,Arthas]
 description: 通过Arthas中的trace命令，可以查看方法内部调用路径，并输出方法路径上的每个节点上耗时。
 ---
 

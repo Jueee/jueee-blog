@@ -6,7 +6,7 @@ date: 2020-08-04
 mathjax: true
 mermaid: true
 tags: [Java,Java诊断,Arthas]
-categories: [Java,Java诊断,Arthas]
+categories: [Java,Arthas]
 description: Arthas是阿里巴巴开源的Java应用诊断利器，本文介绍Arthas里jad命令的实现原理。
 
 ---

@@ -6,7 +6,7 @@ date: 2020-08-13
 mathjax: true
 mermaid: true
 tags: [Java,Java诊断,Arthas]
-categories: [Java,Java诊断,Arthas]
+categories: [Java,Arthas]
 description: 通过Arthas中的thread命令，可以查看当前线程信息及线程的堆栈。从而可以定位线程问题。
 ---
 
