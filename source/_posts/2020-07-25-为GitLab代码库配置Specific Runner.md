@@ -145,7 +145,7 @@ k exec -it runner-gitlab-runner-74cf6f794b-22vln gitlab-runner register -n gitla
 
 进入 `D:\GitLab-Runner` 目录执行命令：
 
-```yml
+```yaml
 ./gitlab-runner.exe register
 ```
 

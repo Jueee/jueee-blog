@@ -181,13 +181,40 @@ mediumzoom: true
 # ============================================================= #
 
 comments:
-  lazyload: true
+  lazyload: false
+  active: gitalk
+  nav:
+    gitalk:
+      text: 登录 GitHub 评论
+      order: 1
+    valine:
+      text: 不登录进行评论
+      order: 2
 
 disqus:
   enable: false
   shortname: theme-next
   count: true
 
+gitalk:
+  # 是否启用
+  enable: true
+  # Github 用户名
+  github_id: jueee
+  # Github 仓库名（需要是公开的仓库）
+  repo: jueee.github.io
+  # Github 应用程序客户端 ID
+  client_id: e61b622bb2d41a9820db
+  # Github 应用程序客户端密钥
+  client_secret: 23dafd8976002c89a46d97d426ea8e5a253dba40
+  # GitHub 仓库所有者和合作者，只有这些人可以初始化 Gitalk
+  admin_user: jueee
+  # 类似于 B 站的关灯模式
+  distraction_free_mode: true
+  # 如果你想让每一个参观你网站的人看到统一的语言，你可以在这里设置，
+  # 可选值：en, zh-CN, es-ES, fr, ru, zh-TW
+  language: zh-CN
+  
 valine:
   enable: true
   appId:  p5BeaWTTwjpAjNFu85LdGhaE-gzGzoHsz
@@ -201,6 +228,7 @@ valine:
   recordIP: false # Whether to record the commenter IP
   serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)
 
+  
 # ============================================================= #
 # ================= Statistics and Analytics （统计和分析）================== #
 # ============================================================= #

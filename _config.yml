@@ -54,7 +54,7 @@ prismjs:
 
 # Home page setting
 index_generator:
-  per_page: 4
+  per_page: 6
   order_by: -date
 
 # Category & Tag
@@ -67,14 +67,14 @@ date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 
 # Pagination
-per_page: 10
+per_page: 12
 pagination_dir: page
 
 # Extensions
 theme: next
 
 archive_generator:
-  per_page: 15
+  per_page: 18
   yearly: true
   monthly: true
   daily: false

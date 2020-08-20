@@ -24,7 +24,7 @@
 
 | 功能说明           | 相关链接                                                     |
 | ------------------ | ------------------------------------------------------------ |
-| 评论系统           | [Valine](https://leancloud.cn/dashboard/applist.html#/apps)  |
+| 评论系统           | [Valine](https://leancloud.cn/dashboard/applist.html#/apps)、[Gitalk](https://github.com/gitalk/gitalk) |
 | 谷歌分析           | [谷歌分析](https://analytics.google.com/)                    |
 | 百度分析           | [百度分析](https://tongji.baidu.com/web/10000226881/overview/index?siteId=15228105) |
 | 站点、页面计数     | [不蒜子计数](https://busuanzi.ibruce.info/)                  |

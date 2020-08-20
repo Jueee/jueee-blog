@@ -47,7 +47,7 @@ GitHub：[https://github.com/next-theme/hexo-theme-next](https://github.com/next
 
 在 hexo下的_config.yml文件中配置：
 
-```yml
+```yaml
 deploy:
   type: git
   repository: git@github.com:Jueee/jueee.github.io.git
