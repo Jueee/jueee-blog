@@ -40,6 +40,10 @@
 
 ### 依赖说明
 
+本项目基于 node：
+
+> [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+
 本项目由 next 搭建：
 
 > [https://github.com/next-theme/theme-next-docs](https://github.com/next-theme/theme-next-docs)
