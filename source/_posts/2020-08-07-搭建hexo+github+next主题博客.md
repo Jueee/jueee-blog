@@ -124,7 +124,7 @@ hexo d -g #生成并上传
 
 #### 问题一：
 
-![image-20200821165728975](assets/image-20200821165728975.png)
+![image-20200821165728975](/images/2020/08/image-20200821165728975.png)
 
 解决方法：
 配置git环境变量，将`C:\Program Files\Git\cmd`（具体根据git安装目录）添加到系统变量path中

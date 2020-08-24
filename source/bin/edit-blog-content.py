@@ -28,7 +28,7 @@ def replaceBolgs(blogs):
     for blog in blogs:
         
         #replaceFile(blog,"categories: [Java,Java诊断,Arthas]","categories: [Java,Arthas]")
-        replaceFile(blog,"```yml","```yaml")
+        replaceFile(blog,"[Windows,软件]","软件")
         #replaceFile(blog,"assets/1","/images/"+YEAR_NUM+"/"+MONTH_NUM+"/1")
 
 if __name__ == '__main__':

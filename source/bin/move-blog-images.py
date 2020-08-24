@@ -14,9 +14,7 @@ def getBlogAddress():
         for f in files:
             if not f.startswith(THIS_MONTH):
                 continue
-            print(f)
             filename = os.path.join(root, f)
-            print(filename)
             blogs.append(filename)
     return blogs
 
