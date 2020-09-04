@@ -5,8 +5,10 @@ commentable: true
 date: 2020-08-30
 mathjax: true
 mermaid: true
-tags: [k8s,Ceph]
-categories: Ceph
+tags: [Ceph,k8s]
+categories: 
+- [Ceph]
+- [k8s]
 description: 
 ---
 ### 相关链接

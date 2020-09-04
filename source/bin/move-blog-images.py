@@ -4,7 +4,7 @@ import fileinput
 THIS_MONTH="2020-09"
 YEAR_NUM=THIS_MONTH.split("-")[0]
 MONTH_NUM=THIS_MONTH.split("-")[1]
-BLOG_PATH = os.path.dirname(__file__)+"/../_posts"
+BLOG_PATH = os.path.dirname(__file__)+"/../_posts"+"/"+YEAR_NUM+"/"+MONTH_NUM
 OLD_IMAGES_PATH = BLOG_PATH+"/"+"assets/"
 NEW_IMAGES_PATH= os.path.dirname(__file__)+"/../images/"+YEAR_NUM+"/"+MONTH_NUM+"/"
 
