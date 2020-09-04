@@ -47,8 +47,14 @@ github项目地址：
 
 ### 在宿主机使用 ceph 命令行
 
-1. 安装 `ceph-common`：`apt-get install ceph-common`。
-2. 进入 `rook-ceph-tools-9c9d7744b-2tpwn` 容器，将 `/etc/ceph/ceph.conf` 和 `/etc/ceph/keyring` 拷贝到宿主机的 `/etc/ceph/` 文件夹下即可。
+1. 安装 `ceph-common`：`apt-get install ceph-common`。
+2. 进入 `rook-ceph-tools-9c9d7744b-2tpwn` 容器，将 `/etc/ceph/ceph.conf` 和 `/etc/ceph/keyring` 拷贝到宿主机的 `/etc/ceph/` 文件夹下即可。
+
+### 获取dashboard密码
+
+```
+kubectl -n rook-ceph get secret rook-ceph-dashboard-password -o jsonpath="{['data']['password']}" | base64 --decode && echo
+```
 
 ### 问题处理
 

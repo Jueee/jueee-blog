@@ -1,7 +1,7 @@
 import os,re,shutil
 import fileinput
 
-THIS_MONTH="2020-08"
+THIS_MONTH="2020-09"
 YEAR_NUM=THIS_MONTH.split("-")[0]
 MONTH_NUM=THIS_MONTH.split("-")[1]
 BLOG_PATH = os.path.dirname(__file__)+"/../_posts"

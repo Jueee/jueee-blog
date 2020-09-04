@@ -133,6 +133,7 @@ codeblock:
     dark: prism-tomorrow
   copy_button:
     enable: true
+    show_result: true
     style: flat
 
 back2top:
