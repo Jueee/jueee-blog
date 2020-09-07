@@ -1,12 +1,5 @@
-import os,re,shutil
+import os,re,shutil,sys
 import fileinput
-
-THIS_MONTH="2020-09"
-YEAR_NUM=THIS_MONTH.split("-")[0]
-MONTH_NUM=THIS_MONTH.split("-")[1]
-BLOG_PATH = os.path.dirname(__file__)+"/../_posts"+"/"+YEAR_NUM+"/"+MONTH_NUM
-OLD_IMAGES_PATH = BLOG_PATH+"/"+"assets/"
-NEW_IMAGES_PATH= os.path.dirname(__file__)+"/../images/"+YEAR_NUM+"/"+MONTH_NUM+"/"
 
 def getBlogAddress():
     blogs = []
@@ -56,6 +49,16 @@ def moveImages():
         print('rmdir:'+OLD_IMAGES_PATH)
 
 if __name__ == '__main__':
+    THIS_MONTH="2020-08"
+    monthParam = sys.argv[1]
+    if monthParam is not None:
+        print("monthParam:",monthParam)
+        THIS_MONTH = monthParam
+    YEAR_NUM=THIS_MONTH.split("-")[0]
+    MONTH_NUM=THIS_MONTH.split("-")[1]
+    BLOG_PATH = os.path.dirname(__file__)+"/../_posts"+"/"+YEAR_NUM+"/"+MONTH_NUM
+    OLD_IMAGES_PATH = BLOG_PATH+"/"+"assets/"
+    NEW_IMAGES_PATH= os.path.dirname(__file__)+"/../images/"+YEAR_NUM+"/"+MONTH_NUM+"/"
     blogs = getBlogAddress()   
     replaceBolgs(blogs)
     moveImages()
