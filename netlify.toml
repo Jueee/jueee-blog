@@ -1,4 +1,0 @@
-[build]
-  command = "sh deploy.sh"
-  publish = "public"
-  environment = { NODE_VERSION = "lts/*", NODE_ENV = "production" }
