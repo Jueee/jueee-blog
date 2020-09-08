@@ -50,10 +50,11 @@ def moveImages():
 
 if __name__ == '__main__':
     THIS_MONTH="2020-08"
-    monthParam = sys.argv[1]
-    if monthParam is not None:
-        print("monthParam:",monthParam)
-        THIS_MONTH = monthParam
+    if len(sys.argv) > 1:
+        monthParam = sys.argv[1]
+        if monthParam is not None:
+            print("monthParam:",monthParam)
+            THIS_MONTH = monthParam
     YEAR_NUM=THIS_MONTH.split("-")[0]
     MONTH_NUM=THIS_MONTH.split("-")[1]
     BLOG_PATH = os.path.dirname(__file__)+"/../_posts"+"/"+YEAR_NUM+"/"+MONTH_NUM
