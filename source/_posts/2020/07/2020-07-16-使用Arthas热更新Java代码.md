@@ -42,7 +42,7 @@ Arthas
 
 Windows 需要以管理员方式运行，bat 脚本如下：
 
-```bat
+```bash
 %1 mshta vbscript:CreateObject("Shell.Application").ShellExecute("cmd.exe","/c %~s0 ::","","runas",1)(window.close)&&exit
 cd /d "%~dp0"
 java -jar arthas-boot.jar
@@ -116,7 +116,7 @@ redefine success, size: 1
 
 ### 结合 jad/mc 命令使用
 
-```shell
+```bash
 jad --source-only com.example.demo.arthas.user.UserController > /tmp/UserController.java
 mc /tmp/UserController.java -d /tmp
 redefine /tmp/com/example/demo/arthas/user/UserController.class
