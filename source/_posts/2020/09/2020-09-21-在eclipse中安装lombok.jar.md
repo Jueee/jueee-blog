@@ -24,18 +24,18 @@ description:
 
 2. **安装lombok.jar**：shift+右键唤出命令窗口，运行**java -jar lombok.jar**  或者 直接双击lombok.jar（后者操作更简单）
 
-   ![image-20200921103421844](assets/image-20200921103421844.png)
+   ![image-20200921103421844](/images/2020/09/image-20200921103421844.png)
 
 3. 选择 eclipse.exe：
-   ![image-20200921103504337](assets/image-20200921103504337.png)
+   ![image-20200921103504337](/images/2020/09/image-20200921103504337.png)
 
-4. 确认 eclipse.exe：![image-20200921103526313](assets/image-20200921103526313.png)
+4. 确认 eclipse.exe：![image-20200921103526313](/images/2020/09/image-20200921103526313.png)
 
 5. 快速安装：
-   ![image-20200921103543338](assets/image-20200921103543338.png)
+   ![image-20200921103543338](/images/2020/09/image-20200921103543338.png)
 
 6. 操作完成后发现eclipse.ini多了一行配置：
-   ![image-20200921103619161](assets/image-20200921103619161.png)
+   ![image-20200921103619161](/images/2020/09/image-20200921103619161.png)
 
 ### **安装成功后操作** 
 

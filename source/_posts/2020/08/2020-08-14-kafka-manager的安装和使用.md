@@ -99,8 +99,9 @@ kafka-manager 默认的端口是9000。
 
    ![1599558709720](/images/2020/08/1599558709720.png)
 
-
 ### 问题解决
+
+#### 开启JMX
 
 如果使用kafka-manager监控，需要开启JMX，则需要勾选：
 
@@ -119,3 +120,36 @@ java.lang.IllegalArgumentException: requirement failed: No jmx port but jmx poll
 JMX_PORT=9999 nohup bin/kafka-server-start.sh config/server.properties &
 ```
 
+#### /kafka-manager/mutex
+
+CMAK添加集群的时候报错：
+
+```
+org.apache.zookeeper.KeeperException$UnimplementedException: KeeperErrorCode = Unimplemented for /kafka-manager/mutex
+        at org.apache.zookeeper.KeeperException.create(KeeperException.java:106)
+        at org.apache.zookeeper.KeeperException.create(KeeperException.java:54)
+        at org.apache.zookeeper.ZooKeeper.create(ZooKeeper.java:1538)
+        at org.apache.curator.utils.ZKPaths.mkdirs(ZKPaths.java:291)
+        at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:746)
+        at org.apache.curator.framework.imps.CreateBuilderImpl$11.call(CreateBuilderImpl.java:723)
+        at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:109)
+        at org.apache.curator.framework.imps.CreateBuilderImpl.pathInForeground(CreateBuilderImpl.java:720)
+        at org.apache.curator.framework.imps.CreateBuilderImpl.protectedPathInForeground(CreateBuilderImpl.java:484)
+        at org.apache.curator.framework.imps.CreateBuilderImpl.forPath(CreateBuilderImpl.java:474)
+```
+
+解决：
+
+```
+root@zk-0:/opt/zookeeper/bin# ./zkCli.sh
+[zk: localhost:2181(CONNECTED) 1] ls /kafka-manager
+[configs, deleteClusters, clusters]
+[zk: localhost:2181(CONNECTED) 2] create /kafka-manager/mutex ""
+Created /kafka-manager/mutex
+[zk: localhost:2181(CONNECTED) 3] create /kafka-manager/mutex/locks ""
+Created /kafka-manager/mutex/locks
+[zk: localhost:2181(CONNECTED) 4] create /kafka-manager/mutex/leases ""
+Created /kafka-manager/mutex/leases
+```
+
+参考：https://github.com/yahoo/CMAK/issues/731
