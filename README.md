@@ -19,7 +19,7 @@
 | 站点地图         | [hexo-generator-sitemap](https://www.npmjs.com/package/hexo-generator-sitemap) |
 | 百度站点         | [hexo-generator-baidu-sitemap](https://www.npmjs.com/package/hexo-generator-baidu-sitemap) |
 | 中英文间增加空格 | [hexo-pangu](https://www.npmjs.com/package/hexo-pangu)       |
-|                  | [hexo-helper-live2d](https://www.npmjs.com/package/hexo-helper-live2d) |
+| Live2D看板娘     | [hexo-helper-live2d](https://www.npmjs.com/package/hexo-helper-live2d) |
 
 #### 其他功能
 
