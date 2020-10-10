@@ -7,7 +7,7 @@ echo commentable: true
 echo date: %today%
 echo mathjax: true
 echo mermaid: true
-echo tags: [Blog,HTML]
+echo tags: [Blog]
 echo categories: Blog
 echo description: 
 echo ---)>%today%-.md

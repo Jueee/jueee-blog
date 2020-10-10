@@ -1,9 +1,9 @@
 {
   "name": "theme-next-docs",
-  "version": "8.0.0-rc.5",
+  "version": "8.0.1",
   "private": true,
   "hexo": {
-    "version": "5.0.0"
+    "version": "5.2.0"
   },
   "description": "Elegant and powerful theme for Hexo.",
   "scripts": {
@@ -27,22 +27,22 @@
   },
   "homepage": "https://theme-next.js.org",
   "dependencies": {
-    "hexo": "5.0.0",
+    "hexo": "^5.2.0",
     "hexo-abbrlink": "^2.2.1",
     "hexo-deployer-git": "^2.1.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
-    "hexo-generator-feed": "2.2.0",
+    "hexo-generator-feed": "^3.0.0",
     "hexo-generator-index": "github:hexojs/hexo-generator-index",
-    "hexo-generator-searchdb": "1.3.2",
+    "hexo-generator-searchdb": "^1.3.3",
     "hexo-generator-tag": "^1.0.0",
     "hexo-helper-live2d": "^3.1.1",
     "hexo-pangu": "^0.2.0",
     "hexo-related-popular-posts": "^5.0.1",
     "hexo-renderer-marked": "github:hexojs/hexo-renderer-marked",
-    "hexo-renderer-stylus": "1.1.0",
-    "hexo-server": "1.0.0",
-    "hexo-theme-next": "8.0.0-rc.5",
+    "hexo-renderer-stylus": "^2.0.1",
+    "hexo-server": "^2.0.0",
+    "hexo-theme-next": "^8.0.1",
     "live2d-widget-model-shizuku": "^1.0.5",
     "nunjucks": "^3.2.2"
   },

@@ -69,19 +69,25 @@ npm install
 
 生成：
 
-```shell
+```bash
 npx hexo generate
 ```
 
 运行：
 
-```shell
+```bash
 npx hexo server
 ```
 
 清理：
 
-```shell
+```bash
 npx hexo clean
+```
+
+升级：
+
+```bash
+npx npm-check -u
 ```
 

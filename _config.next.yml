@@ -39,6 +39,8 @@ scheme: Gemini
 
 darkmode: true
 
+nprogress:
+  enable: true
 
 # ============================================================= #
 # ======================= Menu Settings ======================= #
@@ -168,7 +170,7 @@ related_posts:
 # ============================================================= #
 
 math:
-  per_page: true
+  every_page: true
   mathjax:
     enable: true
 
