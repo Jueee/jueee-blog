@@ -6,7 +6,9 @@ date: 2020-10-16
 mathjax: true
 mermaid: true
 tags: [PHP,软件]
-categories: 软件
+categories: 
+- [软件]
+- [PHP]
 description: 
 ---
 
