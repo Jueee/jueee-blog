@@ -2,7 +2,7 @@
 title: Apache集合工具commons-collections4的使用
 layout: info
 commentable: true
-date: 2020-10-20
+date: 2020-10-11
 mathjax: true
 mermaid: true
 tags: [Apache,Java,JavaJar]
@@ -11,6 +11,8 @@ description:
 ---
 
 ### Jar引入
+
+官网：http://commons.apache.org/proper/commons-collections/
 
 ```xml
 		<dependency>
