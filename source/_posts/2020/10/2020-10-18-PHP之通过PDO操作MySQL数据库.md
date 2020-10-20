@@ -2,7 +2,7 @@
 title: PHP之通过PDO操作MySQL数据库
 layout: info
 commentable: true
-date: 2020-10-16
+date: 2020-10-18
 mathjax: true
 mermaid: true
 tags: [PHP,MySQL]
@@ -38,6 +38,8 @@ description:
                  
 
   PDO是用C编写的，编译为PHP，与用PHP编写的其他解决方案相比，虽然其他都相同，但提供了更高的性能。
+
+<!--more-->
 
 ### PDO安装
 

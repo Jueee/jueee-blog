@@ -5,17 +5,24 @@ commentable: true
 date: 2020-10-20
 mathjax: true
 mermaid: true
-tags: [PHP]
+tags: [PHP,Smarty]
 categories: 
 - [PHP]
 description: 
 ---
 
-### 介绍
+### Smarty 介绍
 
 Smarty是PHP的一个引擎模板，可以更好的进行逻辑与显示的分离，即我们常说的MVC，这个引擎的作用就是将C分离出来。
 
-### 安装
+- [官网](https://www.smarty.net/)：https://www.smarty.net/
+- [中文手册](https://www.smarty.net/docs/zh_CN/)：https://www.smarty.net/docs/zh_CN/
+- [GitHub](https://github.com/smarty-php/smarty/)：https://github.com/smarty-php/smarty/
+- [下载](https://github.com/smarty-php/smarty/releases)：https://github.com/smarty-php/smarty/releases
+
+<!--more-->
+
+### Smarty 安装
 
 在网上下载Smarty包直接将其解压，我们需要的仅仅是里面的libs文件夹。
 
@@ -25,7 +32,7 @@ Libs文件里面都是库文件，我们不应该修改里面的任何内容。
 
 ![image-20201019173920839](/images/2020/10/1603086382391.png)
 
-### 使用
+### Smarty 配置
 
 首先打开Smarty.class.php文件看看里面的一些代码：
 
@@ -50,7 +57,7 @@ Smarty的构造器：
     public $right_delimiter = "}";
 ```
 
-### 简单使用
+### Smarty 简单使用
 
 从上文了解到Smarty需要一些文件夹用来分别存放不同类别的文件。有templates、templates_c、cache、configs等文件夹。这是默认文件夹名称，你可以根据你的喜好对它们进行更改。
 
@@ -92,7 +99,7 @@ Smarty的构造器：
 
 4. 当访问完后将会在templates_c中生成一个相应的混编文件。
 
-### 常用的语法
+### Smarty 常用语法
 
 #### 普通变量的声明与使用
 

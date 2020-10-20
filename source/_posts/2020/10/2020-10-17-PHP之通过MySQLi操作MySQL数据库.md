@@ -2,7 +2,7 @@
 title: PHP之通过MySQLi操作MySQL数据库
 layout: info
 commentable: true
-date: 2020-10-16
+date: 2020-10-17
 mathjax: true
 mermaid: true
 tags: [PHP,MySQL]
@@ -35,6 +35,8 @@ MySQLi 扩展使得用户可以利用MySQL 4.1及其更高版本的新功能，�
 - **调试功能**：
 
   MySQLi 扩展进一步改进了调试功能，提高了开发效率。
+
+<!--more-->
 
 ### MySQLi 安装
 
