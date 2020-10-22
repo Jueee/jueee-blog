@@ -6,7 +6,7 @@ date: 2020-07-31
 mathjax: true
 mermaid: true
 tags: 软件
-categories: 软件
+categories: [软件,Windows]
 description: 介绍微软 Hyper-V 虚拟机的使用。
 ---
 

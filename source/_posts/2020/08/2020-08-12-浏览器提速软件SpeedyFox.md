@@ -6,7 +6,7 @@ date: 2020-08-12
 mathjax: true
 mermaid: true
 tags: 软件
-categories: 软件
+categories: [软件,Windows]
 description: SpeedyFox是一个超级简单的工具，一个单窗口，没有选项的工具来优化浏览器的性能。
 ---
 

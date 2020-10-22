@@ -7,7 +7,7 @@ mathjax: true
 mermaid: true
 tags: [PHP,软件]
 categories: 
-- [软件]
+- [软件,Windows]
 - [PHP]
 description: 
 ---
