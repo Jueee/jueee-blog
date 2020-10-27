@@ -2,7 +2,7 @@
 title: 启用Windows10下的Linux子系统
 layout: info
 commentable: true
-date: 2020-10-22
+date: 2020-10-23
 mathjax: true
 mermaid: true
 tags: [Windows,软件,Linux]
@@ -15,6 +15,8 @@ description:
 ### WSL 介绍
 
 Windows Subsystem for Linux（简称WSL）是一个在Windows 10上能够运行原生Linux二进制可执行文件（ELF格式）的兼容层。
+
+官网：https://docs.microsoft.com/zh-cn/windows/wsl/
 
 <!--more-->
 
@@ -100,6 +102,23 @@ Debian查看版本当前操作系统内核信息
 $ uname -r
 4.4.0-19041-Microsoft
 ```
+
+### 卸载 WSL
+
+#### 方法一
+
+在powershell中输入下面的代码
+
+```
+wslconfig /l  #显示出你安装的列表。
+wslconfig /u debian #debian为上述列表中的名字   注销子系统
+```
+
+#### 方法二
+
+打开开始菜单，右键卸载掉。
+
+![image-20201023142313438](/images/2020/10/image-20201023142313438.png)
 
 ### 更新和升级包
 
