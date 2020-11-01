@@ -160,20 +160,34 @@ $ cnpm run dev
 
 ### 项目导入 idea
 
-#### idea 安装插件
+#### idea 导入项目
 
-#### 官网下载Vue.js插件
+##### 官网下载Vue.js插件
 
 下载链接：[Vue.js - Plugins](https://plugins.jetbrains.com/plugin/9442-vue-js/versions)
 
-1. 下载合适版本的插件，并解压
+1. 下载合适版本的插件。
 
-2. 将Vue.js文件复制到IDEA文件夹plugins中
+2. 安装插件 settings -> plugins -> install plugin from disk，然后选择下载的插件。
 
    ![1604120026356](assets/1604120026356.png)
 
 3. 重启IDEA
 
+4. 导入项目。
+
 
 
 ![1604116285451](assets/1604116285451.png)
+
+#### vscode 导入项目
+
+1. 先安装 [vetur插件](https://marketplace.visualstudio.com/items?itemName=octref.vetur)。
+
+   ![1604157179067](assets/1604157179067.png)
+
+2. 导入项目
+
+3. 启动项目，终端运行 `npm run dev`
+
+   ![1604229209982](assets/1604229209982.png)
