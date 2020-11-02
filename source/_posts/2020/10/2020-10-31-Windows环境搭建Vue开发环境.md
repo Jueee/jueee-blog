@@ -5,10 +5,10 @@ commentable: true
 date: 2020-10-31
 mathjax: true
 mermaid: true
-tags: [Windows,软件,Vue,node.js]
+tags: [Windows,软件,Vue]
 categories: 
-- [Windows,软件]
-- [node.js]
+- [软件,Windows]
+- [Vue]
 description: 
 ---
 
@@ -41,7 +41,7 @@ $ npm -v
 
 1. 在nodejs安装路径下，新建node_global和node_cache两个文件夹
 
-   ![1604114210487](assets/1604114210487.png)
+   ![1604114210487](/images/2020/10/1604114210487.png)
 
 2. 设置缓存文件夹
 
@@ -125,11 +125,11 @@ $ vue -V
 vue init webpack-simple mytest
 ```
 
-![1604115030876](assets/1604115030876.png)
+![1604115030876](/images/2020/10/1604115030876.png)
 
 初始化完成后的项目目录结构如下：
 
-![1604115059665](assets/1604115059665.png)
+![1604115059665](/images/2020/10/1604115059665.png)
 
 #### 安装工程依赖模块
 
@@ -152,15 +152,17 @@ $ cnpm run dev
 
 如下所示：
 
-![1604115322707](assets/1604115322707.png)
+![1604115322707](/images/2020/10/1604115322707.png)
 
 此时，访问 http://localhost:8080/ ，项目正常运行。
 
-![1604115281655](assets/1604115281655.png)
+![1604115281655](/images/2020/10/1604115281655.png)
 
 ### 项目导入 idea
 
 #### idea 导入项目
+
+NodeJS插件需要IntelliJ IDEA Ultimate，因为它依赖于仅在商业版中提供的JavaScript插件。
 
 ##### 官网下载Vue.js插件
 
@@ -170,7 +172,7 @@ $ cnpm run dev
 
 2. 安装插件 settings -> plugins -> install plugin from disk，然后选择下载的插件。
 
-   ![1604120026356](assets/1604120026356.png)
+   ![1604120026356](/images/2020/10/1604120026356.png)
 
 3. 重启IDEA
 
@@ -178,16 +180,16 @@ $ cnpm run dev
 
 
 
-![1604116285451](assets/1604116285451.png)
+![1604116285451](/images/2020/10/1604116285451.png)
 
 #### vscode 导入项目
 
 1. 先安装 [vetur插件](https://marketplace.visualstudio.com/items?itemName=octref.vetur)。
 
-   ![1604157179067](assets/1604157179067.png)
+   ![1604157179067](/images/2020/10/1604157179067.png)
 
 2. 导入项目
 
 3. 启动项目，终端运行 `npm run dev`
 
-   ![1604229209982](assets/1604229209982.png)
+   ![1604229209982](/images/2020/10/1604229209982.png)
