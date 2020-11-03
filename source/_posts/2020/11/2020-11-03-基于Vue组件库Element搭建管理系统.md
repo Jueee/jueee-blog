@@ -65,3 +65,13 @@ new Vue({
 如下图所示：
 
 ![image-20201102153601127](/images/2020/11/image-20201102153601127.png)
+
+### Element 警告处理
+
+#### explicit keys
+
+Element for 循环报如下异常：
+
+> component lists rendered with v-for should have explicit keys
+
+处理方案：加上 `:key="index"`
