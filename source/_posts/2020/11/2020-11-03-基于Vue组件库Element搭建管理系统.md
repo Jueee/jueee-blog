@@ -75,3 +75,7 @@ Element for 循环报如下异常：
 > component lists rendered with v-for should have explicit keys
 
 处理方案：加上 `:key="index"`
+
+v-for 列表渲染时，组件或元素中还要添加一个 :key="xxx"，这里可以看一下 item 有没有唯一标识 id，如果有，可以设置为 :key="item.id"
+
+如果没有唯一标识，可以考虑 v-for="(item, idx) in items"，然后设置 :key="idx"
