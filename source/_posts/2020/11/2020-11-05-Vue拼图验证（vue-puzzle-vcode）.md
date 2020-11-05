@@ -17,6 +17,8 @@ Vue 纯前端的拼图人机验证、右滑拼图验证。
 - 插件网站：https://www.npmjs.com/package/vue-puzzle-vcode
 - Demo：https://isluo.com/work/vue-puzzle-vcode/#/
 
+<!--more-->
+
 ### 安装依赖
 
 ```bash

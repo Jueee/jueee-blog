@@ -6,7 +6,9 @@ date: 2020-08-14
 mathjax: true
 mermaid: true
 tags: [Linux,软件,Kafka]
-categories: [Linux,软件]
+categories: 
+- [Linux,软件]
+- [Kafka]
 description: 
 ---
 
