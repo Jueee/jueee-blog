@@ -105,6 +105,34 @@ return p limit 100
 
 {% endnote %}
 
+### Cypher 增删
+
+#### 添加/更新属性
+
+重新设置所有节点属性：
+
+```cypher
+MERGE (n:Node {name: 'John'})
+SET n = {name: 'John', age: 34, coat: 'Yellow', hair: 'Brown'}
+RETURN n
+```
+
+修改替换属性 **age** 和 **coat**：
+
+```cypher
+MERGE (n:Node {name: 'John'})
+SET n.age = 34, n.coat = 'Yellow'
+RETURN n 
+```
+
+只是增加属性：
+
+```cypher
+MERGE (n:Node {name: 'John'}) 
+SET n += {age: 34, coat: 'Yellow'}
+RETURN n 
+```
+
 ### Cypher 删除
 
 #### 删除所有
