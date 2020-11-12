@@ -2,7 +2,7 @@
 title: vue-admin-template开启顶部导航
 layout: info
 commentable: true
-date: 2020-11-11
+date: 2020-11-12
 mathjax: true
 mermaid: true
 tags: [Vue,Element]
@@ -18,11 +18,10 @@ vue-admin-template 默认没有开启 [顶部导航](https://panjiachen.gitee.io
 
 1. 复制vue-element-admin必要组件，到template对应的目录下。
 
-   @/layout/components/TagsView 文件夹
+   `@/layout/components/TagsView` 文件夹
 
-   @/store/modules/tagsView.js
-   文件
-
+   `@/store/modules/tagsView.js` 文件
+   
 2. 添加标签
    @/layout/components/AppMain.vue添加：
 
