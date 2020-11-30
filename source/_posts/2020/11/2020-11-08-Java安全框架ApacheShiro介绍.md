@@ -6,7 +6,9 @@ date: 2020-11-08
 mathjax: true
 mermaid: true
 tags: [Java,JavaJar,Apache]
-categories: [Java,JavaJar]
+categories: 
+- [Java,JavaJar]
+- [Apache,Shiro]
 description: 
 ---
 

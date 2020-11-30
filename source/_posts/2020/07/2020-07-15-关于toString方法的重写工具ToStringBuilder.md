@@ -2,12 +2,13 @@
 title: 关于toString方法的重写工具ToStringBuilder
 layout: info
 commentable: true
-date: 2020-07-06
+date: 2020-07-15
 mathjax: true
 mermaid: true
 tags: [JavaClass,Apache]
 categories: 
--	[Java,JavaClass]
+- [Java,JavaClass]
+- [Apache,Commons]
 description: apache的commons-lang3的工具包里有一个ToStringBuilder类，这样在打日志的时候可以方便的打印出类实例中的各属性的值。
 
 ---

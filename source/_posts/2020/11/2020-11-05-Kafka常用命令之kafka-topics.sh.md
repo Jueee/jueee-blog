@@ -5,8 +5,8 @@ commentable: true
 date: 2020-11-05
 mathjax: true
 mermaid: true
-tags: [Kafka]
-categories: Kafka
+tags: [Apache,Kafka]
+categories: [Apache,Kafka]
 description: 
 ---
 

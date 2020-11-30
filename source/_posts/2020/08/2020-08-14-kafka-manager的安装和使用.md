@@ -5,10 +5,10 @@ commentable: true
 date: 2020-08-14
 mathjax: true
 mermaid: true
-tags: [Linux,软件,Kafka]
+tags: [Apache,Linux,软件,Kafka]
 categories: 
 - [Linux,软件]
-- [Kafka]
+- [Apache,Kafka]
 description: 
 ---
 

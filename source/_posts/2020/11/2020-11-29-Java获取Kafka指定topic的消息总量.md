@@ -8,7 +8,7 @@ mermaid: true
 tags: [Java,JavaClass,Kafka]
 categories: 
 - [Java,JavaClass]
-- [Kafka]
+- [Apache,Kafka]
 description: 
 ---
 

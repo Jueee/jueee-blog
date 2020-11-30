@@ -1,13 +1,13 @@
 ---
-title: 自动删除 Elasticsearch 索引
+title: 自动删除 ElasticSearch 索引
 layout: info
 commentable: true
 date: 2020-09-07
 mathjax: true
 mermaid: true
-tags: [Elasticsearch,Shell]
+tags: [ElasticSearch,Shell]
 categories: 
-- [Elasticsearch]
+- [ElasticSearch]
 - [Linux,Shell]
 description: 
 ---
