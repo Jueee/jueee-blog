@@ -5,9 +5,9 @@ commentable: true
 date: 2020-11-27
 mathjax: true
 mermaid: true
-tags: [Java,JavaJar,ElasticSearch]
+tags: [Java,JavaClass,ElasticSearch]
 categories: 
-- [Java,JavaJar]
+- [Java,JavaClass]
 - [ElasticSearch]
 description: 
 ---
