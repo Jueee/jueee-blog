@@ -27,6 +27,8 @@ ElasticsearchTemplate 是 Spring 对 ElasticSearch 的 Java api 进行的封装�
 </dependency>
 ```
 
+<!--more-->
+
 ### 使用示例
 
 **索引是否存在**
