@@ -136,9 +136,18 @@ GetIndexRequest request = new GetIndexRequest(indexName);
 boolean exists = restHighLevelClient.indices().exists(request, RequestOptions.DEFAULT);
 ```
 
+列出所有索引：
+
+```java
+GetAliasesRequest request = new GetAliasesRequest();
+GetAliasesResponse getAliasesResponse =  restHighLevelClient.indices().getAlias(request,RequestOptions.DEFAULT);
+Map<String, Set<AliasMetaData>> map = getAliasesResponse.getAliases();
+Set<String> indices = map.keySet();
+```
+
 ### 查询示例
 
-#### 统计查询
+#### 汇总查询
 
 1. 引入 RestHighLevelClient
 
