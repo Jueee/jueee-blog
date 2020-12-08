@@ -46,3 +46,22 @@ elasticsearchTemplate.putMapping(Test.class);
 elasticsearchTemplate.refresh(Test.class);
 ```
 
+**分页查询并计算总数量**
+
+```java
+// 特别注意：es的分页从0页开始
+SearchQuery searchQuery = new NativeSearchQueryBuilder().withQuery(bool).withPageable( PageRequest.of(page, perPage)).build();
+Page<Account> list = elasticsearchTemplate.queryForPage(searchQuery, Account.class);
+elasticsearchTemplate.queryForPage(searchQuery, Account.class, new SearchResultMapper() {
+	@Override
+	public <T> T mapSearchHit(SearchHit searchHit, Class<T> type) {
+		return null;
+	}
+	@Override
+	public <T> AggregatedPage<T> mapResults(SearchResponse response, Class<T> clazz, Pageable pageable) {
+		paginator.setItems((int)response.getHits().getTotalHits());
+		return null;
+	}
+});
+```
+
