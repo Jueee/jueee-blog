@@ -127,16 +127,23 @@ public class ElasticsearchConfiguration implements FactoryBean<RestHighLevelClie
 }
 ```
 
+引入 RestHighLevelClient
+
+   ```java
+   @Autowired
+   private RestHighLevelClient restHighLevelClient;
+   ```
+
 ### 索引相关
 
-判断索引是否存在：
+#### 判断索引是否存在
 
 ```java
 GetIndexRequest request = new GetIndexRequest(indexName);
 boolean exists = restHighLevelClient.indices().exists(request, RequestOptions.DEFAULT);
 ```
 
-列出所有索引：
+#### 列出所有索引
 
 ```java
 GetAliasesRequest request = new GetAliasesRequest();
@@ -145,18 +152,59 @@ Map<String, Set<AliasMetaData>> map = getAliasesResponse.getAliases();
 Set<String> indices = map.keySet();
 ```
 
+#### 创建索引
+
+```java
+CreateIndexRequest request = new CreateIndexRequest(indexName);
+request.settings(Settings.builder()
+                 .put("index.number_of_replicas", 1) // 有1个备份
+                 .put("index.number_of_shards", 5)); // 有5个碎片
+XContentBuilder mappingBuilder = JsonXContent.contentBuilder()
+                    .startObject()
+                    .startObject("properties")
+                    .startObject("title").field("type", "text").field("index", "true").endObject()
+                    .startObject("content").field("type", "text").field("index", "true").endObject()
+                    .endObject()
+                    .endObject();
+request.mapping(mappingBuilder);
+CreateIndexResponse response = restHighLevelClient.indices().create(request, RequestOptions.DEFAULT);
+System.out.println(response.isAcknowledged());
+```
+
+查看索引 Mapping：
+
+```bash
+$ curl http://127.0.0.1:9200/wyqtest/_mapping?pretty
+{
+  "wyqtest" : {
+    "mappings" : {
+      "properties" : {
+        "content" : {
+          "type" : "text"
+        },
+        "title" : {
+          "type" : "text"
+        }
+      }
+    }
+  }
+}
+```
+
+#### 删除索引
+
+```java
+DeleteIndexRequest request = new DeleteIndexRequest(indexName);
+request.indicesOptions(IndicesOptions.LENIENT_EXPAND_OPEN);
+AcknowledgedResponse response = restHighLevelClient.indices().delete(request, RequestOptions.DEFAULT);
+log.info("result: {}", response.isAcknowledged());
+```
+
 ### 查询示例
 
-#### 汇总查询
+#### 聚合汇总
 
-1. 引入 RestHighLevelClient
-
-   ```java
-   @Autowired
-   private RestHighLevelClient restHighLevelClient;
-   ```
-
-2. 构建 BoolQueryBuilder
+1. 构建 BoolQueryBuilder
 
    ```java
    BoolQueryBuilder bool = new BoolQueryBuilder();
@@ -164,13 +212,13 @@ Set<String> indices = map.keySet();
    bool.must(QueryBuilders.rangeQuery("@timestamp").to(end.getTime()));
    ```
 
-3. 设置分组 TermsAggregationBuilder
+2. 设置分组 TermsAggregationBuilder
 
    ```java
    TermsAggregationBuilder aggregationBuilderGroupBy = AggregationBuilders.terms("agg_count").field("module.keyword").size(200);
    ```
 
-4. 分组查询
+3. 分组查询
 
    ```java
    SearchSourceBuilder sourceBuilder = new SearchSourceBuilder().trackTotalHits(true).query(bool).aggregation(aggregationBuilderGroupBy);
@@ -179,7 +227,7 @@ Set<String> indices = map.keySet();
    Aggregations aggregations = response.getAggregations();
    ```
 
-5. 获取查询结果
+4. 获取查询结果
 
    ```java
    Aggregation sourceType = aggregations.get("agg_count");
@@ -188,11 +236,60 @@ Set<String> indices = map.keySet();
    }
    ```
 
-6. 执行结果：
+5. 执行结果：
 
    ```
    [LogIndex]nlp-model[Count]101520
    [LogIndex]web-admin[Count]1106
    ```
 
+#### 分页查询
+
+1. 构建 BoolQueryBuilder
+
+   ```java
+   BoolQueryBuilder bool = new BoolQueryBuilder();
+   bool.must(QueryBuilders.matchQuery("module", dto.getModule()).minimumShouldMatch("100%"));
+   bool.must(QueryBuilders.termQuery("level", dto.getLevel().toLowerCase()));
+   ```
+
+2. 设置查询 SearchSourceBuilder
+
+   ```java
+   SearchSourceBuilder sourceBuilder = new SearchSourceBuilder().trackTotalHits(true);
+   // 设置查询条件BoolQueryBuilder
+   sourceBuilder.query(bool);
+   // 设置分组，需注意 es 的分页是从 0 开始的
+   sourceBuilder.from(page);
+   sourceBuilder.size(perPage);
+   // 设置排序
+   sourceBuilder.sort("@timestamp", SortOrder.DESC);
+   ```
+
+3. 进行查询
+
+   ```java
+   SearchRequest searchRequest = new SearchRequest(index);
+   searchRequest.source(sourceBuilder);
+   SearchResponse response = restHighLevelClient.search(searchRequest, RequestOptions.DEFAULT);
+   ```
+
+4. 获取查询结果
+
+   ```java
+   // 获取结果集
+   SearchHits hits = response.getHits();
+   // 获取总条数
+   paginator.setItems(Integer.valueOf(String.valueOf(hits.getTotalHits().value)));
+   // 转换结果集
+   for (SearchHit hit : response.getHits().getHits()) {
+       PhishingLogDto mailServer = new PhishingLogDto();
+       mailServer.jsonToDto(mailServer, JSONObject.parseObject(hit.getSourceAsString()));
+       list.add(mailServer);
+   }
+   ```
+
    
+
+
+
