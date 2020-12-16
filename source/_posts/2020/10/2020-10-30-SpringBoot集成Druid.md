@@ -5,7 +5,7 @@ commentable: true
 date: 2020-10-30
 mathjax: true
 mermaid: true
-tags: [Java,JavaJar,Alibaba]
+tags: [Java,JavaJar,Alibaba,druid]
 categories: 
 - [Java,JavaJar]
 - [Java,SpringBoot]
@@ -37,7 +37,18 @@ Druid Spring Boot Starter 用于帮助你在Spring Boot项目中轻松集成Drui
 
 #### 配置文件
 
-配置文件 application.properties：
+配置文件 application.properties。
+
+基础配置：
+
+```properties
+spring.datasource.driverClassName=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/test?serverTimezone=UTC
+spring.datasource.username=xxx
+spring.datasource.password=xxx
+```
+
+信息配置：
 
 ```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/test?serverTimezone=UTC
