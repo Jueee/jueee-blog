@@ -8,7 +8,7 @@ mermaid: true
 tags: [Java,JavaClass,ElasticSearch]
 categories: 
 - [Java,JavaClass]
-- [ElasticSearch]
+- [Database,ElasticSearch]
 description: 
 ---
 

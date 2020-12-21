@@ -7,7 +7,7 @@ mathjax: true
 mermaid: true
 tags: [ElasticSearch,Java,JavaClass,Spring]
 categories: 
-- [ElasticSearch]
+- [Database,ElasticSearch]
 - [Java,JavaClass]
 description: 
 ---

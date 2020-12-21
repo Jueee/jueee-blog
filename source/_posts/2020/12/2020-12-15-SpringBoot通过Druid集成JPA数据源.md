@@ -5,7 +5,7 @@ commentable: true
 date: 2020-12-15
 mathjax: true
 mermaid: true
-tags: [Java,JavaJar,Alibaba,druid,JPA]
+tags: [Java,JavaJar,Alibaba,Druid,JPA]
 categories: 
 - [Java,JavaJar]
 - [Java,SpringBoot]

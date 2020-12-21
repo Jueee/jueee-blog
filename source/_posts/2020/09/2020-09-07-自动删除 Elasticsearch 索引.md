@@ -7,7 +7,7 @@ mathjax: true
 mermaid: true
 tags: [ElasticSearch,Shell]
 categories: 
-- [ElasticSearch]
+- [Database,ElasticSearch]
 - [Linux,Shell]
 description: 
 ---
