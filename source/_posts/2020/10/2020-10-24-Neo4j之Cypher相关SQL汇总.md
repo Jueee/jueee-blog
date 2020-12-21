@@ -6,7 +6,7 @@ date: 2020-10-24
 mathjax: true
 mermaid: true
 tags: [Neo4j]
-categories: Neo4j
+categories: [Database,Neo4j]
 description: 
 ---
 

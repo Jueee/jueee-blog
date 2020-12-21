@@ -8,7 +8,7 @@ mermaid: true
 tags: [PHP,MySQL]
 categories: 
 - [PHP]
-- [MySQL]
+- [Database,MySQL]
 description: 
 ---
 

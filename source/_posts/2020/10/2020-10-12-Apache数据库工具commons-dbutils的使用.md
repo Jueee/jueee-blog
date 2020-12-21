@@ -8,7 +8,7 @@ mermaid: true
 tags: [Apache,Java,JavaJar,MySQL]
 categories: 
 - [Java,JavaJar]
-- [MySQL]
+- [Database,MySQL]
 - [Apache,Commons]
 description: 
 ---

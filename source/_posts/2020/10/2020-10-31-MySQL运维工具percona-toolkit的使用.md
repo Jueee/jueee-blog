@@ -6,7 +6,7 @@ date: 2020-10-31
 mathjax: true
 mermaid: true
 tags: [MySQL]
-categories: MySQL
+categories: [Database,MySQL]
 description: 
 ---
 

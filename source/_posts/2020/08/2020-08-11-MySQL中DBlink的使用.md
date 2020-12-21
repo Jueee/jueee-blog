@@ -6,7 +6,7 @@ date: 2020-08-11
 mathjax: true
 mermaid: true
 tags: [MySQL]
-categories: MySQL
+categories: [Database,MySQL]
 description: 在实际工作中，我们可能会遇到需要操作其他数据库实例的部分表，但又不想系统连接多库。此时我们就需要用到数据表映射。如同Oracle中的DBlink一般，使用过Oracle DBlink数据库链接的人都知道可以跨实例来进行数据查询，同样的，Mysql自带的FEDERATED引擎完美的帮我们解决了该问题。
 ---
 
