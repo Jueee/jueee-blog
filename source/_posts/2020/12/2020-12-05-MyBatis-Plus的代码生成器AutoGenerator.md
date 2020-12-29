@@ -166,8 +166,8 @@ public class GenerateCode {
 
 效果如下：
 
-![image-20201225185054159](assets/image-20201225185054159.png)
+![image-20201225185054159](/images/2020/12/image-20201225185054159.png)
 
 以 Bean 中的 `Employees` 为例，效果如下：
 
-![image-20201225185150320](assets/image-20201225185150320.png)
+![image-20201225185150320](/images/2020/12/image-20201225185150320.png)
