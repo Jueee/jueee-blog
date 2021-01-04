@@ -38,7 +38,7 @@ def replaceBolgs(blogs):
 
 def moveImages():
     if not os.path.exists(NEW_IMAGES_PATH):
-        os.mkdir(NEW_IMAGES_PATH)
+        os.makedirs(NEW_IMAGES_PATH)
         print("new mkdir:"+NEW_IMAGES_PATH)
     for image in getImages(OLD_IMAGES_PATH):
         full_path = OLD_IMAGES_PATH+image
