@@ -6,7 +6,8 @@ date: 2021-01-01
 mathjax: true
 mermaid: true
 tags: [Java,Spring,AOP]
-categories: [Java,Spring]
+categories: 
+- [Java,Spring]
 description: 
 ---
 

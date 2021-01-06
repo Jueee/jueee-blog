@@ -75,6 +75,21 @@ wrapper.like("author","tom");
 List<Book> list = bookService.selectAll(wrapper);
 ```
 
+##### 主键查询
+
+确定主键：
+
+```java
+    @TableId(type = IdType.INPUT)
+    private  String	 userid;
+```
+
+主键查询：
+
+```java
+	userMapper.selectById(userid);
+```
+
 ##### 分页查询
 
 注册插件
