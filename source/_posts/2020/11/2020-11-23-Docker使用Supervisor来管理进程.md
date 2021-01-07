@@ -6,7 +6,7 @@ date: 2020-11-23
 mathjax: true
 mermaid: true
 tags: [Docker,Supervisor]
-categories: Docker
+categories: [Container,Docker]
 description: 
 ---
 

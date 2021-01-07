@@ -6,7 +6,7 @@ date: 2020-09-04
 mathjax: true
 mermaid: true
 tags: [k8s]
-categories: k8s
+categories: [Container,Kubernets]
 description: 
 ---
 
