@@ -47,13 +47,13 @@ curl http://127.0.0.1:9200/_cat/indices?v
 查看某个索引的 Mapping 配置：
 
 ```bash
-curl http://127.0.0.1:9200/mdasmail_manti/_mapping?pretty
+curl http://127.0.0.1:9200/index_name/_mapping?pretty
 ```
 
 查询某个索引下某条记录的具体数据：
 
 ```bash
-curl http://127.0.0.1:9200/mdasmail_manti/mail/1e50baf1dea339f871f9272508bc7615
+curl http://127.0.0.1:9200/index_name/mail/1e50baf1dea339f871f9272508bc7615
 ```
 
 ### PUT
@@ -68,11 +68,17 @@ curl -X PUT http://127.0.0.1:9200/_cluster/settings?flat_settings -H 'content-Ty
 
 > {"error":"Content-Type header [application/x-www-form-urlencoded] is not supported","status":406}
 
+修改索引副本数量：
+
+```bash
+curl -X PUT http://127.0.0.1:9200/index_name/_settings -H 'content-Type:application/json' -d '{"number_of_replicas": 2}'
+```
+
 ### DELETE
 
 删除某个索引：
 
 ```bash
-curl -XDELETE 'http://127.0.0.1:9200/mdasmail_manti'
+curl -XDELETE 'http://127.0.0.1:9200/index_name'
 ```
 
