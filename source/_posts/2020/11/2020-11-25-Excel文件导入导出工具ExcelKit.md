@@ -1,5 +1,5 @@
 ---
-title: Excel文件导入导出工具ExcelKit
+title: Excel文件导出工具ExcelKit
 layout: info
 commentable: true
 date: 2020-11-25
@@ -29,7 +29,7 @@ ExcelKit 是简单、好用且轻量级的海量Excel文件导入导出解决方
 </dependency>
 ```
 
-### ExcelKit 示例
+### ExcelKit 导出示例
 
 #### ExcelMapping 
 
@@ -119,13 +119,35 @@ public class UserController {
 }
 ```
 
+方式二：GET请求
+
+```java
+    @RequestMapping(value = "/exportKeyResult", method = RequestMethod.GET)
+    public void exportKeyResult(@RequestParam(value = "id", defaultValue = "1") Long id,HttpServletResponse response) {
+        List<KeyResult> list = keyResultService.selectByKeyId(id);
+        ExcelKit.$Export(KeyResult.class, response).downXlsx(list, false);
+    }
+```
+
 #### 下载 HEML
+
+方式一：elementUI
 
 ```html
 <el-button @click="downExcel" icon="el-icon-download">导出</el-button>
 ```
 
+方式二：原生 HTML
+
+```html
+<button type="button" class="btn btn-success btn-xs" onclick="exportKeyResult(${keyWord.id?default('')})">
+    <i class="glyphicon glyphicon-circle-arrow-down"></i> 下载
+</button>
+```
+
 #### 下载 Script
+
+方式一：vue
 
 ```javascript
 downExcel() {
@@ -151,6 +173,14 @@ downExcel() {
         a.click();
         window.URL.revokeObjectURL(url);
     });
+}
+```
+
+方式二：js
+
+```js
+function exportKeyResult(id){
+    window.location="exportKeyResult?id="+id;
 }
 ```
 
