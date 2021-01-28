@@ -87,3 +87,54 @@ description:
 效果：
 
 ![image-20210125192823150](/images/2021/01/image-20210125192823150.png)
+
+### 方案三：row-class-name
+
+[elementUI文档](https://element.eleme.cn/#/zh-CN/component/table)，有个row-class-name的属性，可以通过回调，返回 Class。
+
+![image-20210127100913363](/images/2021/01/image-20210127100913363.png)
+
+```html
+<el-table :data="tableData" border style="width: max-content;" :row-class-name="tableRowClassName" :header-cell-style="getRowClass">
+    <el-table-column fixed prop="id" label="编号" width="50"></el-table-column>
+    <el-table-column prop="name" label="图书名" width="120"></el-table-column>
+    <el-table-column prop="author" label="作者" width="120"></el-table-column>
+    <el-table-column prop="status" label="状态" width="120"></el-table-column>
+</el-table>
+```
+
+其中：
+
+```js
+          getRowClass ({ rowIndex }) { // 为表格头行添加样式
+            if (rowIndex === 0) {
+              return 'background:#ebeaef'
+            } else {
+              return ''
+            }
+          },
+          tableRowClassName ({ row, rowIndex }) { // 为表格行添加样式
+            if ((rowIndex + 1) % 2 === 0) {
+              return 'double'　　//  基数行对应的类
+            } else {
+              return 'single'　　//  偶数行对应的类
+            }
+          }
+```
+
+样式如下：
+
+```css
+.double {
+  background: #e9a7a7 !important;
+  color: green;
+}
+.single {
+  background: #9ebce9 !important;
+  color: red;
+}
+```
+
+效果：
+
+![image-20210127101205407](/images/2021/01/image-20210127101205407.png)
