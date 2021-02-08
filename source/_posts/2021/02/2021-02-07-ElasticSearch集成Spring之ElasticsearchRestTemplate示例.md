@@ -23,6 +23,8 @@ ElasticsearchRestTemplate是spring-data-elasticsearch项目中的一个类，和
 </dependency>
 ```
 
+<!--more-->
+
 ### 使用ElasticsearchRest
 
 1. 参数配置：
