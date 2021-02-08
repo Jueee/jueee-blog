@@ -18,6 +18,17 @@ ElasticsearchTemplate 是 Spring 对 ElasticSearch 的 Java api 进行的封装�
 
 #### 引入依赖
 
+Springboot 项目：
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+</dependency>
+```
+
+普通项目：
+
 ```xml
 <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-elasticsearch -->
 <dependency>
@@ -28,6 +39,77 @@ ElasticsearchTemplate 是 Spring 对 ElasticSearch 的 Java api 进行的封装�
 ```
 
 <!--more-->
+
+### 使用 Template
+
+1. 参数配置：
+
+   ```properties
+   elasticsearch.address=127.0.0.1:9200
+   elasticsearch.cluster-name=elasticsearch
+   ```
+
+2. 配置引入：
+
+   ```java
+   import lombok.extern.slf4j.Slf4j;
+   import org.elasticsearch.common.settings.Settings;
+   import org.elasticsearch.common.transport.TransportAddress;
+   import org.elasticsearch.xpack.client.PreBuiltXPackTransportClient;
+   import org.springframework.beans.factory.annotation.Value;
+   import org.springframework.context.annotation.Bean;
+   import org.springframework.context.annotation.Configuration;
+   import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
+   
+   import java.net.InetAddress;
+   
+   @Slf4j
+   @Configuration
+   public class ElasticSearchConfig {
+   
+       @Value("${elasticsearch.address}")
+       private String elasticSearchAddress;
+   
+       @Value("${elasticsearch.cluster-name}")
+       private String elasticSearchClusterName;
+   
+       @Bean
+       PreBuiltXPackTransportClient elasticsearchClient() {
+           String clusterNodes = elasticSearchAddress;
+           Settings  settings= Settings.builder()
+                   .put("cluster.name", elasticSearchClusterName)
+                   .build();
+           PreBuiltXPackTransportClient client = new PreBuiltXPackTransportClient(settings);
+           try{
+               for (String clusterNode : clusterNodes.split(";")) {
+                   //if (clientMap.get(DataSourceNameConstant.USER_DB + dataBase.getOrgId()) == null) {
+                   String hostName = clusterNodes.split(":")[0];
+                   String port = clusterNodes.split(":")[1];
+                   log.info(" transport node : " + clusterNode);
+                   TransportAddress socketTransportAddress = new TransportAddress(
+                           InetAddress.getByName(hostName), Integer.valueOf(port));
+                   client.addTransportAddress(socketTransportAddress);
+                   client.addTransportAddress(socketTransportAddress);
+               }
+           } catch (Exception e){
+               log.error(e.getMessage(),e);
+           }
+           return client;
+       }
+   
+       @Bean
+       ElasticsearchTemplate elasticsearchTemplate() {
+           return new ElasticsearchTemplate(elasticsearchClient());
+       }
+   }
+   ```
+
+3. 使用：
+
+   ```java
+   @Autowired
+   ElasticsearchTemplate elasticsearchTemplate;
+   ```
 
 ### 使用示例
 
