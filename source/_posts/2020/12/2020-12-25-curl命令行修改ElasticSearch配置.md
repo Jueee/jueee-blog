@@ -54,6 +54,7 @@ curl http://127.0.0.1:9200/index_name/_mapping?pretty
 
 ```bash
 curl http://127.0.0.1:9200/index_name/mail/1e50baf1dea339f871f9272508bc7615
+curl http://127.0.0.1:9200/index_name/_doc/1e50baf1dea339f871f9272508bc7615（默认 type 为 _doc）
 ```
 
 ### PUT
