@@ -26,7 +26,7 @@ github下载地址：https://github.com/MSOpenTech/redis/tags
 
 启动命令 `redis-server redis.windows.conf`，出现下图显示表示启动成功了。
 
-![image-20210310163025307](assets/image-20210310163025307.png)
+![image-20210310163025307](/images/2021/03/image-20210310163025307.png)
 
 ### 设置Redis服务
 
@@ -38,11 +38,11 @@ github下载地址：https://github.com/MSOpenTech/redis/tags
 redis-server --service-install redis.windows.conf --loglevel verbose
 ```
 
-![image-20210310163529899](assets/image-20210310163529899.png)
+![image-20210310163529899](/images/2021/03/image-20210310163529899.png)
 
 输入命令之后没有报错，表示成功了，刷新服务，会看到多了一个redis服务。
 
-![image-20210310164140439](assets/image-20210310164140439.png)
+![image-20210310164140439](/images/2021/03/image-20210310164140439.png)
 
 ### 常用的Redis服务命令
 
