@@ -64,7 +64,7 @@ Object.keys(filters).forEach(key => {
 })
 ```
 
-### 使用过滤器的写法
+#### 使用过滤器
 
 默认格式
 
@@ -92,3 +92,23 @@ Object.keys(filters).forEach(key => {
 </el-table>
 ```
 
+### 通过 formatter
+
+#### 定义函数
+
+```js
+    dateFormat(row,column){
+      var date = row[column.property];
+      if(date === undefined){
+        return ''
+      }
+      var dT=new Date(date);//row 表示一行数据, dateTime 表示要格式化的字段名称
+      return dT.getFullYear()+"-"+(dT.getMonth()+1)+"-"+dT.getDate()+" "+dT.getHours()+":"+dT.getMinutes()+":"+dT.getSeconds();
+    }
+```
+
+#### 使用函数
+
+```html
+<el-table-column prop="updateTime" label="更新时间" :formatter="dateFormat" ></el-table-column>
+```

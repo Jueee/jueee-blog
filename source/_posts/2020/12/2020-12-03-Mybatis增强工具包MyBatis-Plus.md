@@ -133,6 +133,14 @@ page.getRecords().forEach(System.out::println); // 查询对象
 System.out.println(page.getTotal()); // 总数
 ```
 
+##### distinct 查询
+
+```java
+QueryWrapper<TablePo> queryWrapper = new QueryWrapper<>();
+queryWrapper.select("DISTINCT no,name").orderByAsc("no");
+return mapper.selectList(queryWrapper);
+```
+
 #### 新增操作
 
 ```java

@@ -113,6 +113,8 @@ Springboot 项目：
 
 ### 使用示例
 
+#### 索引操作
+
 **索引是否存在**
 
 ```java
@@ -127,6 +129,29 @@ logger.info("[createResult]"+createResult);
 elasticsearchTemplate.putMapping(Test.class);
 elasticsearchTemplate.refresh(Test.class);
 ```
+
+**根据索引前缀查所有索引**
+```
+public List<String> indexNameAll(String elasticsearchPrefix) {
+    IndicesStatsRequest indicesStatsRequest = new IndicesStatsRequest();
+    indicesStatsRequest.indices(elasticsearchPrefix + "*");
+    PreBuiltTransportClient client = (PreBuiltTransportClient)elasticsearchTemplate.getClient();
+    Map<String, IndexStats> stats = client.admin().indices().stats(indicesStatsRequest).actionGet().getIndices();
+    if (stats == null || stats.isEmpty()) {
+        return null;
+    }
+    String[] nameArray = new String[stats.values().size()];
+    int index = 0;
+    for (IndexStats stat : stats.values()) {
+        String indexName = stat.getIndex();// 获取索引值
+        nameArray[index] = indexName;
+        index++;
+    }
+    return Arrays.asList(nameArray);
+}
+```
+
+#### 数据查询
 
 **分页查询并计算总数量**
 
