@@ -1,5 +1,5 @@
 ---
-title: MySQL对Json数据进行查询及修改
+title: MySQL操作Json数据相关使用总结
 layout: info
 commentable: true
 date: 2021-06-02
@@ -49,7 +49,7 @@ MySQL 8.0.4 新增了 Json 表函数的功能，可以将 JsonArray 数据解析
 
 ### Json 函数汇总
 
-[MySQL官方]([MySQL 5.7.8 中 Json 函数](https://dev.mysql.com/doc/refman/5.7/en/json-functions.html)) 列出json相关的函数，完整列表如下:
+[MySQL官方](https://dev.mysql.com/doc/refman/5.7/en/json-functions.html) 列出json相关的函数，完整列表如下:
 
 | 分类                                                         | 函数                                                         | 描述                                         |
 | :----------------------------------------------------------- | :----------------------------------------------------------- | :------------------------------------------- |
@@ -134,8 +134,6 @@ SELECT JSON_ARRAY(true,JSON_OBJECT("key1", "aaa"),'bbb',10);
 SELECT JSON_QUOTE(json_data) FROM json_demo;
 >> "{\"a\": 1, \"b\": {\"c\": 30}}"
 ```
-
-
 
 ### 查找 JSON
 
@@ -259,7 +257,28 @@ SELECT JSON_SEARCH(json_data,'all','abc') FROM json_demo;
 >> ["$[0]", "$[2].x"]
 ```
 
+#### SQL 运用
 
+通过 `json_data->'$.version'` 或 `json_data->>'$.version'` 提取出来的 Json 字段，可以直接运用在 SQL 语句中，比如进行条件查询或者 order 排序等操作。
+
+例如：
+
+```sql
+原始 json_data 列数据：
+>> {"name": "wyq", "age": 29}
+
+= 查询：
+SELECT * FROM json_demo where json_data->>'$.name' ='wyq';
+
+like 查询：
+SELECT * FROM json_demo where json_data->>'$.name' like '%wyq%';
+
+大小于查询：
+SELECT * FROM json_demo where json_data->>'$.age' < 35;
+
+排序：
+SELECT * FROM json_demo order by json_data->>'$.age' desc;
+```
 
 ### 修改 JSON
 
@@ -598,6 +617,12 @@ CREATE TABLE `employee` (
 ) ENGINE=InnoDB
 ```
 
+新增索引格式：
+
+```mysql
+ALTER TABLE table_name ADD KEY ( (CAST(column_name -> '$' AS UNSIGNED ARRAY)) );
+```
+
 新增语句如前所述。
 
 查看 explain 执行计划：
@@ -621,3 +646,10 @@ explain SELECT * FROM `test`.`employee` where CAST(json_data->>'$.name'AS CHAR(2
 即可看到，使用了所创建的索引。
 
 ![image-20210603192300147](/images/2021/06/image-20210603192300147.png)
+
+```
+explain FORMAT=TREE SELECT * FROM `test`.`employee` where CAST(json_data->>'$.name'AS CHAR(25))='Bob';
+
+>> -> Index lookup on employee using json_data_name_index (cast(json_unquote(json_extract(json_data,_utf8mb3'$.name')) as char(25) charset utf8)='Bob')  (cost=0.35 rows=1)
+```
+
