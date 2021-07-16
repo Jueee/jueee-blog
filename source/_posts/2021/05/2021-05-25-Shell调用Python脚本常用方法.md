@@ -8,7 +8,7 @@ mermaid: true
 tags: [Python,Shell]
 categories: 
 - [Python]
-- [Shell]
+- [OS,Shell]
 description: 
 ---
 

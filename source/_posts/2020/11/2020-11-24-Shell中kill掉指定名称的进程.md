@@ -6,7 +6,7 @@ date: 2020-11-24
 mathjax: true
 mermaid: true
 tags: [Linux,Shell]
-categories: [Linux,Shell]
+categories: [OS,Shell]
 description: 
 ---
 

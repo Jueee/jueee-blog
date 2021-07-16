@@ -8,7 +8,7 @@ mermaid: true
 tags: [Database,ElasticSearch,curl]
 categories: 
 - [Database,ElasticSearch]
-- [Linux,Shell]
+- [OS,Shell]
 description: 
 ---
 

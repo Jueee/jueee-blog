@@ -7,7 +7,7 @@ mathjax: true
 mermaid: true
 tags: [Apache,Linux,软件,Kafka]
 categories: 
-- [Linux,软件]
+- [软件,Linux]
 - [Apache,Kafka]
 description: 
 ---

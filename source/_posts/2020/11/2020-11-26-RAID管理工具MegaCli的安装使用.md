@@ -6,7 +6,9 @@ date: 2020-11-26
 mathjax: true
 mermaid: true
 tags: [Linux,软件,RAID]
-categories: [Linux,软件]
+categories: 
+- [软件,Linux]
+- [OS,Linux]
 description: 
 ---
 
