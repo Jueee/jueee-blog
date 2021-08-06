@@ -57,6 +57,17 @@ description:
     private int total;
 ```
 
+#### 特殊字段
+
+某些特殊字段在 MySQL 里面是关键词。
+
+在查询语句中需要对字段进行特殊处理：
+
+```java
+    @TableField("`sql`")
+    private String sql;
+```
+
 #### 查询操作
 
 ##### 批量查询

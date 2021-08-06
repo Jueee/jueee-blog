@@ -57,6 +57,12 @@ curl http://127.0.0.1:9200/index_name/mail/1e50baf1dea339f871f9272508bc7615
 curl http://127.0.0.1:9200/index_name/_doc/1e50baf1dea339f871f9272508bc7615（默认 type 为 _doc）
 ```
 
+查看索引配置：
+
+```
+curl http://elastic:123456@127.0.0.1:9200/index_name/_settings
+```
+
 ### PUT
 
 修改参数（单个查询最大的桶数，默认10000）：
@@ -74,6 +80,10 @@ curl -X PUT http://127.0.0.1:9200/_cluster/settings?flat_settings -H 'content-Ty
 ```bash
 curl -X PUT http://127.0.0.1:9200/index_name/_settings -H 'content-Type:application/json' -d '{"number_of_replicas": 2}'
 ```
+
+若报异常：
+
+
 
 ### DELETE
 
