@@ -5,8 +5,8 @@ commentable: true
 date: 2021-08-23
 mathjax: true
 mermaid: true
-tags: [Blog]
-categories: Blog
+tags: [软件,Windows]
+categories: [软件,Windows]
 description: 
 ---
 
