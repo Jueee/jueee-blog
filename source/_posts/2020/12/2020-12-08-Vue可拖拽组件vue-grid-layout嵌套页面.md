@@ -244,3 +244,21 @@ Vue的标签属性label中字符串拼接变量：
 ```
 
 {% endnote %}
+
+#### iframe 中跳转外部页面
+
+```
+<div ><p class="gradient-blue" @click="jumpTo('count')">点击跳转</p></div>
+```
+
+Vue 跳转：
+
+```js
+  methods: {
+    jumpTo(info){
+      var url = process.env.VUE_APP_BASE_PATH+info;
+      window.top.location.href = url
+    }
+  }
+```
+
