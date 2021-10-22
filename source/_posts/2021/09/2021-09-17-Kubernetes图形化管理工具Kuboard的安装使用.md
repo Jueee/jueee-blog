@@ -44,3 +44,5 @@ kubectl apply -f https://addons.kuboard.cn/kuboard/kuboard-v3.yaml
 - 输入初始用户名和密码，并登录
   - 用户名： `admin`
   - 密码： `Kuboard123`
+  
+  

@@ -1,1 +1,1 @@
-python ..\..\..\bin\move-blog-images.py 2021-08
+python ..\..\..\bin\move-blog-images.py 2021-09
