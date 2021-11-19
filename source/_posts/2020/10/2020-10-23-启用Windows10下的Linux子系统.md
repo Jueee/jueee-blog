@@ -103,6 +103,16 @@ $ uname -r
 4.4.0-19041-Microsoft
 ```
 
+### 重启系统
+
+WSL 子系统是基于 LxssManager 服务运行的。
+只需要将 LxssManager 重启即可。（注意：必须在管理员权限下运行。）
+
+```
+net stop LxssManager
+net start LxssManager
+```
+
 ### 卸载 WSL
 
 #### 方法一
@@ -184,6 +194,14 @@ sudo apt update && sudo apt upgrade
 
 但是要注意，cmd 的窗口还不能关掉。关掉后 sshd 服务也会关掉，连接就断开了。
 
+### WSL文件访问传输
+
+打开WSL子系统的shell终端，输入:
+
+```bash
+explorer.exe .
+```
+
 ### 问题解决
 
 如果提示下面报错，很可能是进行设置后，没有重启电脑。
@@ -193,3 +211,4 @@ sudo apt update && sudo apt upgrade
 ### 参考资料
 
 - https://docs.microsoft.com/zh-cn/windows/wsl/install-win10
+- https://docs.microsoft.com/zh-cn/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package
