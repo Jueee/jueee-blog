@@ -85,6 +85,17 @@ curl -X PUT http://127.0.0.1:9200/index_name/_settings -H 'content-Type:applicat
 
 
 
+```
+curl -X PUT 127.0.0.1:30103/_cluster/settings -H 'content-Type:application/json' -d '{
+  "persistent" : {
+    "indices.breaker.fielddata.limit" : "100%",
+    "indices.breaker.total.limit" : "80%" 
+  }
+}'
+```
+
+
+
 ### DELETE
 
 删除某个索引：

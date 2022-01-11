@@ -35,6 +35,21 @@ Tk mybatis 可以极大的方便开发人员。可以随意的按照自己的需
 </dependency>
 ```
 
+### 常见使用
+
+#### 忽略属性
+
+在需要忽略的属性上增加@transient注解
+
+javax.persistence.Transient;
+
+transient是类型修饰符，只能用来修饰字段。在对象序列化过程中， 被 @Transient 标记的变量不会被序列化
+
+```java
+@Transient
+private String res_typeInfo;
+```
+
 ### Tkmybatis 单数据源
 
 2. 配置文件：
