@@ -5,10 +5,10 @@ commentable: true
 date: 2021-02-08
 mathjax: true
 mermaid: true
-tags: [Java,Springboot,Database,Neo4j]
+tags: [Java,SpringBoot,Database,Neo4j]
 categories: 
 - [Database,Neo4j]
-- [Java,Springboot]
+- [Java,SpringBoot]
 description: 
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 实现前端 Excel 导出(支持多Sheet)
+title: 纯前端实现支持多Sheet 的 Excel 导出
 layout: info
 commentable: true
 date: 2021-12-23
@@ -11,6 +11,12 @@ description:
 ---
 
 实现纯前端的 Excel 导出(支持多 sheet)。
+
+### SheetJS
+
+- GitHub：https://github.com/SheetJS/sheetjs
+- 官网：https://sheetjs.com/
+- 下载：https://www.cdnpkg.com/xlsx/file/xlsx.core.min.js/?id=78603
 
 <!--more-->
 
@@ -225,83 +231,5 @@ s2ab(s) {
 },
 ```
 
-### 压缩包导出
 
-#### 安装依赖
 
-```shell
-npm i jszip -S
-npm i file-saver -S 
-```
-
-#### 增加按钮
-
-实现多选非常简单：手动添加一个`el-table-column`，设`type`属性为`selection`即可
-
-```html
-<el-button size="small" type="success" icon="el-icon-circle-plus-outline" @click="batchDownload" >批量下载</el-button>
-
-<el-table
-          border
-          size="small"
-          v-loading="loading"
-          stripe
-          :data="analysisTaskData"
-          style="width: 100%;"
-          @selection-change="handleSelectionChange"
-        >
-          <el-table-column type="selection" width="50"></el-table-column>
-          <el-table-column prop="id" label="ID" width="50"></el-table-column>
-          <el-table-column prop="type" label="类型"></el-table-column>
-</el-table>
-```
-
-对应方法
-
-```js
-export default {
-  data() {
-    return {
-      multipleSelection: []
-    };
-  },
-  methods: {
-    handleSelectionChange(val) {
-      this.multipleSelection = val;
-    },
-    async batchDownload(){
-      console.log(this.multipleSelection)
-      this.$message.success("批量下载成功！");
-    }
-  }
-}
-```
-
-#### 下载方法
-
-```vue
-import JSZip from 'jszip'
-import FileSaver from 'file-saver'
-```
-
-下载方法
-
-```js
-    async batchDownload(){
-      const zip = new JSZip()
-      for (var i = 0; i < this.multipleSelection.length; i++) {
-        const id = this.multipleSelection[i].id
-        const wb = await this.workbookData(id)
-        const file_name = this.multipleSelection[i].content+'-任务结果('+id+').xlsx'
-        zip.file(file_name, this.workbook2blob(wb), { binary: true })
-      }
-      let zipName = '批量下载'
-      zip.generateAsync({type:"blob"}).then(content => { 
-        //生成zip文件包
-        FileSaver.saveAs(content, `${zipName}.zip`)
-        this.$message.success("批量下载成功！");
-      })
-    }
-```
-
-#### 
