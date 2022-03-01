@@ -10,7 +10,7 @@ categories: [Database,MySQL]
 description: 
 ---
 
-之前本地只安装了 MySQL 7 的版本，现在需要再安装一个 MySQL 8 版本。并同时运行两个MySQL 实例。
+之前本地只安装了 MySQL 5.7 的版本，现在需要再安装一个 MySQL 8 版本。并同时运行两个MySQL 实例。
 
 <!--more-->
 
