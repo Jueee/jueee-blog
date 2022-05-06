@@ -222,9 +222,10 @@ valine:
   enable: true
   appId:  p5BeaWTTwjpAjNFu85LdGhaE-gzGzoHsz
   appKey:  UjjFeqPU2GMhIUJUYBh16SE0
+  serverURLs: https://p5beawtt.lc-cn-n1-shared.com
   placeholder: Just go go # comment box placeholder
   avatar: mm # gravatar style
-  meta: [nick, mail, link] # Custom comment header
+  meta: [nick, mail] # Custom comment header
   pageSize: 10 # pagination size
   visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
   comment_count: true # If false, comment count will only be displayed in post page, not in home page

@@ -118,6 +118,8 @@ description:
 
 `npm install xlsx --save`
 
+参考：https://www.npmjs.com/package/xlsx
+
 #### 引入依赖
 
 在组件中导入 xlsx
