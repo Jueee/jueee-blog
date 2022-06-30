@@ -50,17 +50,33 @@ curl http://127.0.0.1:9200/_cat/indices?v
 curl http://127.0.0.1:9200/index_name/_mapping?pretty
 ```
 
-查询某个索引下某条记录的具体数据：
+查看索引数据：
 
-```bash
-curl http://127.0.0.1:9200/index_name/mail/1e50baf1dea339f871f9272508bc7615
-curl http://127.0.0.1:9200/index_name/_doc/1e50baf1dea339f871f9272508bc7615（默认 type 为 _doc）
+```shell
+curl http://elastic:123456@127.0.0.1:9200/index_name/_search
+// 查询
+curl http://127.0.0.1:9200/index_name/_search?pretty&q=column_name:column_value
+// 排序
+curl http://127.0.0.1:9200/index_name/_search?pretty&sort=@timestamp:asc&q=column_name:column_value
 ```
 
 查看索引配置：
 
 ```
 curl http://elastic:123456@127.0.0.1:9200/index_name/_settings
+```
+
+查看索引总数：
+
+```
+curl http://elastic:123456@127.0.0.1:9200/index_name/_count
+```
+
+查询某个索引下某条记录的具体数据：
+
+```bash
+curl http://127.0.0.1:9200/index_name/mail/1e50baf1dea339f871f9272508bc7615
+curl http://127.0.0.1:9200/index_name/_doc/1e50baf1dea339f871f9272508bc7615（默认 type 为 _doc）
 ```
 
 ### PUT

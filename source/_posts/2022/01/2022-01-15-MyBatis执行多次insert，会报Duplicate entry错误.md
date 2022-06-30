@@ -6,7 +6,7 @@ date: 2022-01-15
 mathjax: true
 mermaid: true
 tags: [Java,JavaJar,MyBatis]
-categories: [Java,JavaJar]
+categories: [Java,JavaError]
 description: 
 ---
 

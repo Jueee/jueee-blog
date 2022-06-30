@@ -7,7 +7,7 @@ date: 2021-11-25
 mathjax: true
 mermaid: true
 tags: [Java]
-categories: Java
+categories: [Java,JavaError]
 description: 
 ---
 
