@@ -24,7 +24,7 @@ curl 是常用的命令行工具，用来请求 Web 服务器。它的名字就�
 - `-H`参数添加 HTTP 请求的标头。
 - `-X`参数指定 HTTP 请求的方法。
 
-### GET
+### 集群
 
 查看es集群状态：
 
@@ -32,11 +32,15 @@ curl 是常用的命令行工具，用来请求 Web 服务器。它的名字就�
 curl http://127.0.0.1:9200/_cat/health?v
 ```
 
+### 节点
+
 集群节点健康查看：
 
 ```bash
 curl http://127.0.0.1:9200/_cat/nodes?v
 ```
+
+### 索引管理
 
 列出集群所有索引：
 
@@ -44,42 +48,19 @@ curl http://127.0.0.1:9200/_cat/nodes?v
 curl http://127.0.0.1:9200/_cat/indices?v
 ```
 
-查看某个索引的 Mapping 配置：
+删除某个索引：
 
 ```bash
-curl http://127.0.0.1:9200/index_name/_mapping?pretty
+curl -XDELETE 'http://127.0.0.1:9200/index_name'
 ```
 
-查看索引数据：
-
-```shell
-curl http://elastic:123456@127.0.0.1:9200/index_name/_search
-// 查询
-curl http://127.0.0.1:9200/index_name/_search?pretty&q=column_name:column_value
-// 排序
-curl http://127.0.0.1:9200/index_name/_search?pretty&sort=@timestamp:asc&q=column_name:column_value
-```
+### 索引配置
 
 查看索引配置：
 
 ```
 curl http://elastic:123456@127.0.0.1:9200/index_name/_settings
 ```
-
-查看索引总数：
-
-```
-curl http://elastic:123456@127.0.0.1:9200/index_name/_count
-```
-
-查询某个索引下某条记录的具体数据：
-
-```bash
-curl http://127.0.0.1:9200/index_name/mail/1e50baf1dea339f871f9272508bc7615
-curl http://127.0.0.1:9200/index_name/_doc/1e50baf1dea339f871f9272508bc7615（默认 type 为 _doc）
-```
-
-### PUT
 
 修改参数（单个查询最大的桶数，默认10000）：
 
@@ -97,9 +78,7 @@ curl -X PUT http://127.0.0.1:9200/_cluster/settings?flat_settings -H 'content-Ty
 curl -X PUT http://127.0.0.1:9200/index_name/_settings -H 'content-Type:application/json' -d '{"number_of_replicas": 2}'
 ```
 
-若报异常：
-
-
+更新索引配置：
 
 ```
 curl -X PUT 127.0.0.1:30103/_cluster/settings -H 'content-Type:application/json' -d '{
@@ -110,13 +89,82 @@ curl -X PUT 127.0.0.1:30103/_cluster/settings -H 'content-Type:application/json'
 }'
 ```
 
+### 索引 Mapping 
 
-
-### DELETE
-
-删除某个索引：
+#### 查看索引 Mapping
 
 ```bash
-curl -XDELETE 'http://127.0.0.1:9200/index_name'
+curl http://127.0.0.1:9200/index_name/_mapping?pretty
 ```
+
+#### 更新索引Mapping
+
+```shell
+PUT userreport-2022-07-03/_mapping 
+{ "properties": { 
+	"clusterIgnores" : {
+	  "type" : "nested",
+	  "properties" : {
+		"type" : {
+		  "type" : "integer"
+		},
+		"value" : {
+		  "type" : "integer"
+		}
+	  }
+	} 
+  } 
+}
+```
+
+### 索引数据
+
+#### 查看索引数据
+
+```shell
+curl http://elastic:123456@127.0.0.1:9200/index_name/_search
+// 查询
+curl http://127.0.0.1:9200/index_name/_search?pretty&q=column_name:column_value
+// 排序
+curl http://127.0.0.1:9200/index_name/_search?pretty&sort=@timestamp:asc&q=column_name:column_value
+```
+
+#### 查看索引总数
+
+```
+curl http://elastic:123456@127.0.0.1:9200/index_name/_count
+```
+
+#### 查看具体数据
+
+查询某个索引下某条记录的具体数据：
+
+```bash
+curl http://127.0.0.1:9200/index_name/mail/1e50baf1dea339f871f9272508bc7615
+curl http://127.0.0.1:9200/index_name/_doc/1e50baf1dea339f871f9272508bc7615（默认 type 为 _doc）
+```
+
+
+### 索引模板
+
+#### 查看模板内容
+
+```
+curl http://127.0.0.1:9200/_template/template_name?pretty
+```
+
+#### 更新模板内容
+
+```
+curl -X PUT http://127.0.0.1:9200/_template/userreport
+{
+    "order" : 0,
+    "index_patterns" : [
+      "userreport-*",
+      "qy-userreport-*"
+    ]
+}
+```
+
+
 
