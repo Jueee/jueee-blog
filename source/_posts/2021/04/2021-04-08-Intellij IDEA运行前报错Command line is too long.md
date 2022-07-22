@@ -22,7 +22,6 @@ Error running ‘HelloWorld’: Command line is too long. Shorten command line f
 <component name="PropertiesComponent">
 ```
 
-
 在标签里加一行
 
 ```xml
@@ -42,3 +41,31 @@ Error running ‘HelloWorld’: Command line is too long. Shorten command line f
   </component>
 ```
 
+也有可能是以下样式：
+
+```xml
+<component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+```
+
+添加以下内容即可：
+
+    "dynamic.classpath": "true"
+
+最终展示效果为：
+
+```xml
+<component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "dynamic.classpath": "true"
+  }
+}]]></component>
+```

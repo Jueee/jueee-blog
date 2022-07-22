@@ -44,7 +44,6 @@ CMD ["/usr/bin/supervisord"]
 PATH="/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 * * * * * echo `date` >> /tmp/crontab-date
 * * * * * /java-app-dir/healthCheck.sh
-
 ```
 
 这样安装完cron服务后，crontab服务并不会自启动，还需要 `/etc/init.d/cron start` 的启动命令。
@@ -96,4 +95,3 @@ $ sudo docker run -t -i test/supervisords
 2020-11-23 13:48:54,284 INFO spawned: 'cron' with pid 8
 2020-11-23 13:48:54,286 INFO spawned: 'javaapp' with pid 9
 ```
-
