@@ -5,11 +5,10 @@ commentable: true
 date: 2022-07-05
 mathjax: true
 mermaid: true
-tags: [OS，Mac]
-categories: [OS，Mac]
-description: 
+tags: [OS,Mac]
+categories: [OS,Mac]
+description:
 ---
-
 ### 问题描述
 
 Mac 版本的Chrome访问未认证的https链接时，会提示您的连接不是私密连接。
@@ -42,18 +41,16 @@ mac 下打开 /Applications/Google Chrome.app/Contents/MacOS 后，看到了有�
 
 操作如下三条命令：
 
-- mv Google Chrome Google.real 
+- mv Google Chrome Google.real
 
   把原先的二进制文件重命名
-
-- vi Google Chrome 
+- vi Google Chrome
 
   新建Google Chrome，输入
 
   ```
   /Applications/Google\ Chrome.app/Contents/MacOS/Google.real --ignore-certificate-errors
   ```
-
 - chmod 777 Google Chrome
 
 重启chrome即可。
