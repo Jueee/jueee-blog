@@ -8,7 +8,7 @@ mermaid: true
 tags: [软件,Windows]
 categories: 
 - [软件,Windows]
-- [软件,Mac]
+- [软件,MacOS]
 description: 
 ---
 
