@@ -40,8 +40,7 @@ def replaceBolgs(blogs):
     for blog in blogs:
         #replaceFile(blog,"/assets/images/","/images/")
         #replaceFile(blog,"mathjax: false","mathjax: false")
-        replaceFile(blog,"assets/1","/images/"+YEAR_NUM+"/"+MONTH_NUM+"/1")
-        replaceFile(blog,"assets/image-","/images/"+YEAR_NUM+"/"+MONTH_NUM+"/image-")
+        replaceFile(blog,"assets/","/images/"+YEAR_NUM+"/"+MONTH_NUM+"/")
 
 def moveImages():
     if not os.path.exists(NEW_IMAGES_PATH):
