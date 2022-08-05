@@ -62,3 +62,13 @@ description:
 ![image-20210811101752608](/images/2021/08/image-20210811101752608.png)
 
 如果出现 **Failed to load file** 异常， 则需要配置中，在 Arguments中添加的参数, 用英文格式的双引号""包括起来。
+
+### Mac 配置
+
+配置 External Tools下的Typora工具：
+
+<img src="/images/2021/08/image-20220805213111392.png" alt="image-20220805213111392" style="zoom:50%;" />
+
+为 External Tools 下的 Typora工具增加快捷键。
+
+<img src="/images/2021/08/image-20220805213232770.png" alt="image-20220805213232770" style="zoom:50%;" />

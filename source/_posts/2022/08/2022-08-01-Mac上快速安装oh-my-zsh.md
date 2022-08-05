@@ -96,3 +96,26 @@ $ echo $SHELL
 修改主题为 `crcandy`，并重启终端生效。
 
 <img src="/images/2022/08/image-20220801213206293.png" alt="image-20220801213206293" style="zoom:50%;" />
+
+### 安装 **[zsh-completions](https://github.com/zsh-users/zsh-completions)** 插件
+
+在 oh-my-zsh repo 中克隆存储库：
+
+```bash
+git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
+```
+
+增加 `FPATH` 在 `.zshrc` 文件中，增加在 `source "$ZSH/oh-my-zsh.sh"` 之前:
+
+```
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+```
+
+验证：
+
+```
+> % git cl
+clean -- remove untracked files from working tree
+clone -- clone repository into new directory
+```
+
