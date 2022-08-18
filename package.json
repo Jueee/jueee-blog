@@ -3,7 +3,7 @@
   "version": "8.0.1",
   "private": true,
   "hexo": {
-    "version": "5.4.2"
+    "version": "5.4.0"
   },
   "description": "Elegant and powerful theme for Hexo.",
   "scripts": {

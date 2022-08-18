@@ -14,7 +14,7 @@ fi
 
 
 (echo ---
-echo title: 
+echo title:  
 echo layout: info
 echo commentable: true
 echo date: $today

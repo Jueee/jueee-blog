@@ -5,8 +5,8 @@ commentable: true
 date: 2022-07-05
 mathjax: true
 mermaid: true
-tags: [OS,Mac]
-categories: [OS,Mac]
+tags: [OS,MacOS]
+categories: [OS,MacOS]
 description:
 ---
 ### 问题描述
