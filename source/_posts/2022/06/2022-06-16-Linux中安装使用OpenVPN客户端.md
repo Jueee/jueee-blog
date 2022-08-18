@@ -19,6 +19,18 @@ apt-get install openvpn -y
 ### 使用 OpenVPN
 
 ```
-openvpn  --config /etc/openvpn/config/vpn.ovpn --daemon --log-append /var/log/openvpn.log
+#! /bin/bash
+
+sudo openvpn  --config /etc/openvpn/config/vpn.ovpn --daemon --log-append /var/log/openvpn.log
 ```
 
+### 异常处理
+
+如果出现报错：
+
+```
+Thu Aug 18 17:46:48 2022 ERROR: Cannot ioctl TUNSETIFF tun: Operation not permitted (errno=1)
+Thu Aug 18 17:46:48 2022 Exiting due to fatal error
+```
+
+其实只要使用  sudo openvpn client.ovpn 就可以了。
