@@ -32,6 +32,34 @@ curl 是常用的命令行工具，用来请求 Web 服务器。它的名字就�
 curl http://127.0.0.1:9200/_cat/health?v
 ```
 
+#### 修改系统参数
+
+修改参数（单个查询最大的桶数，默认10000）：
+
+```bash
+curl -X PUT http://127.0.0.1:9200/_cluster/settings?flat_settings \
+     -H 'content-Type:application/json' \
+     -d '{"persistent":{"search":{"max_buckets":"2147483647"}}}'
+```
+
+如果不加 `-H 'content-Type:application/json'` 参数，可能会报错：
+
+> {"error":"Content-Type header [application/x-www-form-urlencoded] is not supported","status":406}
+
+#### 修改集群分片数量
+
+新建索引时，出现报错：
+
+> Validation Failed: 1: this action would add [10] shards, but this cluster currently has [996]/[1000] maximum normal shards open
+
+这是由于 ES7.x默认分片只有1000个，目前已经用完了，导致已经没法创建新的索引了。需要提高ES的分片数量。
+
+```bash
+curl --location --request PUT 'http://127.0.0.1:9200/_cluster/settings' \
+     --header 'Content-Type: application/json' \
+     --data '{"persistent":{"cluster":{"max_shards_per_node":10000}}}'
+```
+
 ### 节点
 
 集群节点健康查看：
@@ -62,15 +90,6 @@ curl -XDELETE 'http://127.0.0.1:9200/index_name'
 curl http://elastic:123456@127.0.0.1:9200/index_name/_settings
 ```
 
-修改参数（单个查询最大的桶数，默认10000）：
-
-```bash
-curl -X PUT http://127.0.0.1:9200/_cluster/settings?flat_settings -H 'content-Type:application/json' -d '{"persistent":{"search":{"max_buckets":"2147483647"}}}'
-```
-
-如果不加 `-H 'content-Type:application/json'` 参数，可能会报错：
-
-> {"error":"Content-Type header [application/x-www-form-urlencoded] is not supported","status":406}
 
 修改索引副本数量：
 

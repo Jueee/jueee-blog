@@ -56,6 +56,13 @@ for line in $indexs;do
 done
 ```
 
+其中：
+
+- `echo $line | awk -F - '{print $3}'`  中的 `-` 表示索引中的日期分隔符，根据需要，可以换成 `awk -F _ '{print $3}'` 等
+- `'{print $3}'` 中的 `3` 表示日期所处的位置，可以根据需要更改。
+
+### 配置自动任务
+
 每天2点定时删除es中指定日期的数据，配置 crontab：
 
 ```powershell

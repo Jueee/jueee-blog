@@ -25,6 +25,16 @@ ElasticsearchRestTemplate是spring-data-elasticsearch项目中的一个类，和
 
 <!--more-->
 
+#### 操作方法
+
+Spring Data ElasticSearch有下边这几种方法操作ElasticSearch：
+
+- ElasticsearchRepository（传统的方法，可以使用）
+- ElasticsearchRestTemplate（推荐使用。基于RestHighLevelClient）
+- ElasticsearchTemplate（ES7中废弃，不建议使用。基于TransportClient）
+- RestHighLevelClient（推荐度低于ElasticsearchRestTemplate，因为API不够高级）
+- TransportClient（ES7中废弃，不建议使用）
+
 ### 使用ElasticsearchRest
 
 1. 参数配置：
@@ -66,6 +76,20 @@ ElasticsearchRestTemplate是spring-data-elasticsearch项目中的一个类，和
    }
    ```
 
+   或者：
+
+   ```java
+   @Bean
+   RestHighLevelClient elasticsearchHighLevelClient() {
+       RestHighLevelClient client=new RestHighLevelClient(
+               RestClient.builder(
+                       new HttpHost("127.0.0.1", 9200, "http")
+               )
+       );
+       return client;
+   }
+   ```
+
 3. 使用：
 
    ```java
@@ -73,11 +97,9 @@ ElasticsearchRestTemplate是spring-data-elasticsearch项目中的一个类，和
    ElasticsearchRestTemplate elasticsearchTemplate;
    ```
 
-### 常用示例
+### 索引示例
 
-#### 索引相关
-
-创建索引：
+#### 创建索引
 
 ```java
 Map<String, Object> settings = new HashMap<>();
@@ -91,6 +113,47 @@ boolean createResult = elasticsearchTemplate.createIndex(clazz,settings);
 elasticsearchTemplate.putMapping(clazz);
 elasticsearchTemplate.refresh(clazz);
 ```
+
+虽然可以正常创建索引，但会提示 `putMapping` 和 `refresh` 方法过期，此时可以使用：
+
+```java
+IndexOperations createResult = elasticsearchTemplate.indexOps(clazz);
+boolean create = createResult.create();
+boolean putMapping = createResult.putMapping();
+```
+
+#### 删除索引
+
+```java
+elasticsearchTemplate.deleteIndex(clazz);
+```
+
+或者：
+
+```java
+elasticsearchTemplate.indexOps(clazz).delete();
+```
+
+#### 查看索引是否存在
+
+```
+elasticsearchTemplate.indexExists(indexName);
+```
+
+或者：
+
+```
+elasticsearchTemplate.indexOps(clazz).exists();
+```
+
+#### 获取索引Mapping
+
+```java
+IndexOperations createResult = elasticsearchTemplate.indexOps(clazz);
+return createResult.createMapping().toJson();
+```
+
+### 数据示例
 
 #### 新增数据
 
