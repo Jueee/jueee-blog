@@ -2,7 +2,7 @@
 title: Spring的IOC容器管理对象示例
 layout: info
 commentable: true
-date: 2020-12-31
+date: 2021-01-03
 mathjax: true
 mermaid: true
 tags: [Java,Spring,AOP]
