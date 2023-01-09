@@ -185,5 +185,11 @@ curl -X PUT http://127.0.0.1:9200/_template/userreport
 }
 ```
 
+### 测试分词效果
+
+```
+curl -X POST  127.0.0.1:9200/_analyze -H 'content-Type:application/json' -d '{   "tokenizer": "ngram",  "text": "Quick Fox"}'
+```
+
 
 
