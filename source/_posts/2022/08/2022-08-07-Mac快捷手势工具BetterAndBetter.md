@@ -5,8 +5,8 @@ commentable: true
 date: 2022-08-07
 mathjax: true
 mermaid: true
-tags: [Blog]
-categories: Blog
+tags: [软件,MacOS]
+categories: [软件,MacOS]
 description:
 ---
 

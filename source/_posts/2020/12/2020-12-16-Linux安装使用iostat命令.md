@@ -5,9 +5,8 @@ commentable: true
 date: 2020-12-16
 mathjax: true
 mermaid: true
-tags: [OS,Linux,软件,iostat]
+tags: [OS,Linux]
 categories: 
-- [软件,Linux]
 - [OS,Linux]
 categories: 
 description: 

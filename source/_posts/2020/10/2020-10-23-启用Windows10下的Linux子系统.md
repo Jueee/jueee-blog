@@ -136,7 +136,9 @@ wslconfig /u debian #debian为上述列表中的名字   注销子系统
 
 强烈建议定期更新包目录并使用分发版的首选包管理器升级已安装的包。 
 
-对于 Debian/Ubuntu，请使用 apt，修改 `/etc/apt/sources.list`：
+对于 Debian/Ubuntu，请使用 apt，修改 `/etc/apt/sources.list`。
+
+buster 系统：
 
 ```bash
 deb http://mirrors.163.com/debian/ buster main contrib non-free
@@ -147,6 +149,19 @@ deb http://mirrors.163.com/debian/ buster-backports main contrib non-free
 # deb-src http://mirrors.163.com/debian/ buster-backports main contrib non-free
 deb http://mirrors.163.com/debian-security buster/updates main contrib non-free
 # deb-src http://mirrors.163.com/debian-security buster/updates main contrib non-free
+```
+
+bullseye 系统：
+
+```bash
+deb https://mirrors.163.com/debian/ bullseye main non-free contrib
+deb-src https://mirrors.163.com/debian/ bullseye main non-free contrib
+deb https://mirrors.163.com/debian-security/ bullseye-security main
+deb-src https://mirrors.163.com/debian-security/ bullseye-security main
+deb https://mirrors.163.com/debian/ bullseye-updates main non-free contrib
+deb-src https://mirrors.163.com/debian/ bullseye-updates main non-free contrib
+deb https://mirrors.163.com/debian/ bullseye-backports main non-free contrib
+deb-src https://mirrors.163.com/debian/ bullseye-backports main non-free contrib
 ```
 
 更新
@@ -204,9 +219,21 @@ explorer.exe .
 
 ### 问题解决
 
+#### 报错异常
+
 如果提示下面报错，很可能是进行设置后，没有重启电脑。
 
 ![image-20201022170346394](/images/2020/10/image-20201022170346394.png)
+
+#### WSL无法打开
+
+WSL无法打开或者卡死后，使用管理员权限打开终端(比如cmd)，然后输入：
+
+```
+netsh winsock reset
+```
+
+最后，重启windows即可。
 
 ### 参考资料
 

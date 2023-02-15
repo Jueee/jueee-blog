@@ -5,8 +5,8 @@ commentable: true
 date: 2022-11-21
 mathjax: true
 mermaid: true
-tags: [Blog]
-categories: Blog
+tags: [Database,MySQL]
+categories: [Database,MySQL]
 description: 
 ---
 

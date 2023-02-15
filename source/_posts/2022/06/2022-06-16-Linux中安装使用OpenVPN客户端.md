@@ -16,6 +16,8 @@ description:
 apt-get install openvpn -y
 ```
 
+<!--more-->
+
 ### 使用 OpenVPN
 
 ```
@@ -34,3 +36,7 @@ Thu Aug 18 17:46:48 2022 Exiting due to fatal error
 ```
 
 其实只要使用  sudo openvpn client.ovpn 就可以了。
+
+### 下载地址
+
+https://build.openvpn.net/downloads/releases/

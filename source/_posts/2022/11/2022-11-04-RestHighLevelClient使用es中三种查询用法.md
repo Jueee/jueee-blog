@@ -5,8 +5,8 @@ commentable: true
 date: 2022-11-04
 mathjax: true
 mermaid: true
-tags: [Blog]
-categories: Blog
+tags: [Database,ElasticSearch]
+categories: [Database,ElasticSearch]
 description: 
 ---
 

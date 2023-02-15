@@ -5,8 +5,10 @@ commentable: true
 date: 2022-12-12
 mathjax: true
 mermaid: true
-tags: [Blog]
-categories: Blog
+tags: [Apache,HttpComponents]
+categories: 
+- [Apache,HttpComponents]
+- [Java,JavaJar]
 description: 
 ---
 
