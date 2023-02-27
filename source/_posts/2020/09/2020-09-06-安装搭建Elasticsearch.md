@@ -1,34 +1,34 @@
 ---
-title: 安装搭建Elasticsearch
+title: 安装搭建ElasticSearch
 layout: info
 commentable: true
 date: 2020-09-06
 mathjax: true
 mermaid: true
-tags: [Elasticsearch]
+tags: [ElasticSearch]
 categories: 
-- [Database,Elasticsearch]
+- [Database,ElasticSearch]
 description: 
 ---
 
-### Elasticsearch
+### ElasticSearch
 
-Elasticsearch 是一个分布式的开源搜索和分析引擎，适用于所有类型的数据，包括文本、数字、地理空间、结构化和非结构化数据。
+ElasticSearch是一个分布式的开源搜索和分析引擎，适用于所有类型的数据，包括文本、数字、地理空间、结构化和非结构化数据。
 
 <!--more-->
 
-### 下载Elasticsearch
+### 下载ElasticSearch
 
 > https://www.elastic.co/cn/downloads/elasticsearch
 
-### 安装Elasticsearch
+### 安装ElasticSearch
 
 ```
 $ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.2-linux-x86_64.tar.gz
 $ tar -xvf elasticsearch-7.4.2-linux-x86_64.tar
 ```
 
-### 配置Elasticsearch
+### 配置ElasticSearch
 
 配置文件：
 
@@ -54,7 +54,7 @@ path.data: /mnt/data/elasticsearch/data
 network.host: 0.0.0.0
 ```
 
-### 启动Elasticsearch
+### 启动ElasticSearch
 
 ```
 $ ./elasticsearch -d
