@@ -202,47 +202,6 @@ log.info("result: {}", response.isAcknowledged());
 
 ### 查询示例
 
-#### 聚合汇总
-
-1. 构建 BoolQueryBuilder
-
-   ```java
-   BoolQueryBuilder bool = new BoolQueryBuilder();
-   bool.must(QueryBuilders.rangeQuery("@timestamp").from(start.getTime()));
-   bool.must(QueryBuilders.rangeQuery("@timestamp").to(end.getTime()));
-   ```
-
-2. 设置分组 TermsAggregationBuilder
-
-   ```java
-   TermsAggregationBuilder aggregationBuilderGroupBy = AggregationBuilders.terms("agg_count").field("module.keyword").size(200);
-   ```
-
-3. 分组查询
-
-   ```java
-   SearchSourceBuilder sourceBuilder = new SearchSourceBuilder().trackTotalHits(true).query(bool).aggregation(aggregationBuilderGroupBy);
-   SearchRequest searchRequest = new SearchRequest(esIndexName).source(sourceBuilder);
-   SearchResponse response = restHighLevelClient.search(searchRequest, RequestOptions.DEFAULT);
-   Aggregations aggregations = response.getAggregations();
-   ```
-
-4. 获取查询结果
-
-   ```java
-   Aggregation sourceType = aggregations.get("agg_count");
-   for (Terms.Bucket bucket : ((Terms) sourceType).getBuckets()) {
-       logger.info("[LogIndex]"+bucket.getKeyAsString()+"[Count]"+bucket.getDocCount());
-   }
-   ```
-
-5. 执行结果：
-
-   ```
-   [LogIndex]nlp-model[Count]101520
-   [LogIndex]web-admin[Count]1106
-   ```
-
 #### 分页查询
 
 1. 构建 BoolQueryBuilder
@@ -289,7 +248,34 @@ log.info("result: {}", response.isAcknowledged());
    }
    ```
 
-   
+
+#### 根据 IDs 查询数据集
+
+```java
+MultiGetRequest request = new MultiGetRequest();
+for (int i = 0; i < indexArray.size(); i++) {
+   request.add(new MultiGetRequest.Item(index, idArray.getString(i)));
+}
+MultiGetResponse response = restHighLevelClient.mget(request, RequestOptions.DEFAULT);
+MultiGetItemResponse[] itemResponses = response.getResponses();
+for (MultiGetItemResponse itemResponse : itemResponses) {
+    GetResponse getResponse = itemResponse.getResponse();
+    if (getResponse.isExists()) {
+        Map<String, Object> sourceAsMap = getResponse.getSourceAsMap();
+        for (String key : sourceAsMap.keySet()) {
+            Object value = sourceAsMap.get(key);
+            try {
+                if (Constants.ONLINE_SUSPECT_DATE_COLUMN.contains(key)) { // 定义时间格式
+                    value = Constants.ONLINE_SUSPECT_DATE_FORMAT.parse(value.toString()); // 将时间字符串解析为Date对象
+                }
+                BeanUtils.setProperty(onlineSuspect, key, value);
+            } catch (Exception e) {
+                log.error("[key]{} [Message]{}", key, e.getMessage(), e);
+            }
+        }
+    }
+}
+```
 
 
 

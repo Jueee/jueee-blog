@@ -40,3 +40,12 @@ Thu Aug 18 17:46:48 2022 Exiting due to fatal error
 ### 下载地址
 
 https://build.openvpn.net/downloads/releases/
+
+### 连接多个VPN
+
+管理员运行：
+
+```
+C:\Program Files\TAP-Windows\bin\addtap.bat
+```
+

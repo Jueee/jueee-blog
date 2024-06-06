@@ -209,7 +209,7 @@ gitalk:
   # Github 应用程序客户端 ID
   client_id: e61b622bb2d41a9820db
   # Github 应用程序客户端密钥
-  client_secret: 23dafd8976002c89a46d97d426ea8e5a253dba40
+  client_secret: f531cb8372b3c90357ec963d19c7cc918bbf488b
   # GitHub 仓库所有者和合作者，只有这些人可以初始化 Gitalk
   admin_user: jueee
   # 类似于 B 站的关灯模式

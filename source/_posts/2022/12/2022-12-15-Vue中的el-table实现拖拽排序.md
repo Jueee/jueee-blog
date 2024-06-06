@@ -166,6 +166,11 @@ export default {
 </script>
 ```
 
+注意：
+
+- rowDrop 方法中的 apiObj 需要和 `el-table` 中的 `:data="apiObj"` 保持一致。
+- **row-key 必须是唯一的**，如ID，不然会出现排序不对的情况。
+
 #### 后端代码
 
 Controller 层：
@@ -191,3 +196,30 @@ public void sortConfig(Config[] configs) {
     }
 }
 ```
+
+### 固定单元格拖动
+
+使用了 Sortable.js 之后 el-table表格中的 input 框里的文字不能选中复制。
+
+可以给表格绑定动态的列名，在初始化 Sortable.js 时使用 handle 属性来控制可以通过哪些地方来进行拖动。
+
+对想拖到的单元格增加 class 样式：
+
+```
+          <el-table-column prop="id"
+                           label="编号"
+                           class-name="handle_sort_info"
+                           width="60"></el-table-column>
+```
+
+在 Sortable 中增加 handle 配置：
+
+```
+      Sortable.create(tbody, {
+        handle: ".handle_sort_info",
+        onEnd ({ newIndex, oldIndex }) {
+        
+        },
+      })
+```
+

@@ -22,6 +22,8 @@ description:
 
 如果一个logstash得参数大于topic，则topic数据都会被这个logstash消费掉。
 
+<!--more-->
+
 ### 消费设置
 
 ```java
@@ -38,6 +40,71 @@ input {
     }
 }
 ```
+
+### Kafka 加密配置
+
+#### es 6.X
+
+配置官网：https://www.elastic.co/guide/en/logstash/6.8/plugins-inputs-kafka.html#plugins-inputs-kafka-jaas_path
+
+配置 sasl_jaas_config.conf：
+
+```
+$ cat config/sasl_jaas_config.conf
+KafkaClient {
+        org.apache.kafka.common.security.plain.PlainLoginModule required
+        username="xxx"
+        password="xxx";
+};
+```
+
+**【注意】**username="xxx" 和 password="xxx" 必须为双引号，否则会报错！
+
+配置 logstash.conf：
+
+```
+$ cat pipeline/logstash.conf
+input {
+      kafka {
+        id => "my_plugin_id"
+        bootstrap_servers => "kafka.hostname:9092"
+        topics => ["logger-channel"]
+        security_protocol => "SASL_PLAINTEXT"
+        sasl_mechanism => "PLAIN"
+        jaas_path => "/usr/share/logstash/config/sasl_jaas_config.conf"
+        group_id => "logstash"
+        auto_offset_reset => "latest"
+        codec => plain {
+            charset => "UTF-8"
+        }
+      }
+    }
+}
+```
+
+#### es 7.X
+
+配置官网：https://www.elastic.co/guide/en/logstash/current/plugins-inputs-kafka.html#plugins-inputs-kafka-sasl_jaas_config
+
+```
+    input {
+      kafka {
+        id => "my_plugin_id"
+           bootstrap_servers => "kafka.hostname:9092"
+        topics => ["logger-channel"]
+        security_protocol => "SASL_PLAINTEXT"
+        sasl_mechanism => "PLAIN"
+        sasl_jaas_config => "org.apache.kafka.common.security.plain.PlainLoginModule required username='xxx'  password='xxx';"
+        group_id => "logstash"
+        auto_offset_reset => "latest"
+        codec => plain {
+            charset => "UTF-8"
+        }
+      }
+    }
+```
+
+
 
 ### docker-compose 配置
 
