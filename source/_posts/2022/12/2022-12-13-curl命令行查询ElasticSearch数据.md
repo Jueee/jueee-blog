@@ -66,6 +66,12 @@ curl 'localhost:9200/index_name/mail/aaa'
 curl 'localhost:9200/index_name/_doc/aaa'（默认 type 为 _doc）
 ```
 
+kibana:
+
+```
+GET index_name/_doc/e
+```
+
 ### 根据条件查询
 
 ```bash
@@ -93,3 +99,67 @@ curl 'http://127.0.0.1:9200/index_name1,index_name2,index_name3/_search?pretty&q
 curl 'http://127.0.0.1:9200/index_name/_search' {"query":{"bool":{"must":[{"match":{"uid":"aaa"}},{"match":{"msgid":"bbb"}}]}}}
 ```
 
+### elastic 调用
+
+```bash
+POST indexname/_search
+{
+  "query": {
+    "bool" : {
+      "filter" : [
+        {
+          "terms" : {
+            "cloumnname.keyword" : [
+              "searchvalue"
+            ],
+            "boost" : 1.0
+          }
+        },
+        {
+          "range" : {
+            "addtime" : {
+              "from" : 1717171200000,
+              "to" : 1719244799000,
+              "include_lower" : true,
+              "include_upper" : true,
+              "boost" : 1.0
+            }
+          }
+        }
+      ],
+      "adjust_pure_negative" : true,
+      "boost" : 1.0
+    }
+  }
+}
+```
+
+### 随机查询
+
+在Elasticsearch中，你可以使用function_score查询和random_score函数来实现随机取样。但是，Elasticsearch并没有直接的方式来取得查询结果的千分之一。你可以通过设置一个适当的种子和权重来尝试达到这个效果。
+
+以下是一个示例查询，它将返回约千分之一的匹配文档：
+
+```
+POST indexname/_search
+{
+  "query": {
+    "function_score": {
+      "query": { "match_all": {} },
+      "functions": [
+        {
+          "random_score": { "seed": "132", "field": "_seq_no" }
+        }
+      ],
+      "boost_mode": "replace",
+      "min_score": 0.999999
+    }
+  }
+}
+```
+
+在这个查询中，random_score函数会为每个文档生成一个0到1之间的随机分数。seed参数确保了每次查询的结果是一致的。field参数是可选的，如果提供了，那么分数将基于该字段的哈希值。
+
+min_score参数设置了返回结果的最小分数。由于random_score生成的分数在0到1之间，所以设置min_score为0.999意味着只有约千分之一的文档的分数会大于或等于这个值，因此只有这些文档会被返回。
+
+请注意，这只是一个近似的解决方案，实际的返回结果可能会略多于或少于查询结果的千分之一。

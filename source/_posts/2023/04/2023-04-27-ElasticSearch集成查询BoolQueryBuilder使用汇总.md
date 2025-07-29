@@ -38,6 +38,35 @@ bool.must(QueryBuilders.termQuery(key, value));
 bool.must(QueryBuilders.termsQuery(key, value1, value2, value3));
 ```
 
+#### 存在匹配
+
+```java
+QueryBuilders.existsQuery("your_field");
+```
+
+嵌套查询
+
+```java
+TermQueryBuilder termQuery = QueryBuilders.termQuery("properties.key.keyword", "head");
+BoolQueryBuilder filterBoolQuery = QueryBuilders.boolQuery().filter(termQuery);
+NestedQueryBuilder nestedQuery = QueryBuilders.nestedQuery("properties", filterBoolQuery, ScoreMode.None);
+```
+
+#### 不存在匹配
+
+```java
+QueryBuilders.boolQuery().mustNot(QueryBuilders.existsQuery("your_field"));
+```
+
+嵌套查询
+
+```java
+TermQueryBuilder termQuery = QueryBuilders.termQuery("properties.key", "mailInfoEsId");
+BoolQueryBuilder filterBoolQuery = QueryBuilders.boolQuery().filter(termQuery);
+NestedQueryBuilder nestedQuery = QueryBuilders.nestedQuery("properties", filterBoolQuery, ScoreMode.None);
+BoolQueryBuilder finalBoolQuery = QueryBuilders.boolQuery().mustNot(nestedQuery);
+```
+
 #### 包含匹配
 
 ```

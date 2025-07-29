@@ -47,6 +47,21 @@ $ nvm version
    npm_mirror: https://npm.taobao.org/mirrors/npm/
    ```
 
+```
+> nvm install 22.5.1
+Node.js v22.5.1 is not yet released or available.
+PS E:\code\React\my-project> npm ls available
+arco-design-pro@1.0.0 E:\code\React\my-project
+`-- (empty)
+
+ nvm list
+  * 21.7.3 (Currently using 64-bit executable)
+    18.16.0
+    11.15.0
+```
+
+
+
 ### nvm 使用
 
 - `nvm version`可以简写为nvm v：查看`NVM`版本
